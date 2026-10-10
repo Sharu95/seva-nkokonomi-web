@@ -1,0 +1,108 @@
+/* Site footer: company identity and legal info (org.nr.), links. */
+
+.site-footer {
+  padding-block: var(--ds-space-11) var(--ds-space-9);
+  background: var(--ds-color-surface-sunken);
+  border-top: 1px solid var(--ds-color-border-subtle);
+  color: var(--ds-color-text-secondary);
+  font-size: var(--ds-font-small-size);
+  line-height: var(--ds-font-small-line-height);
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: var(--ds-space-9);
+}
+
+.site-footer__logo {
+  height: 36px;
+  width: auto;
+  margin-bottom: var(--ds-space-5);
+}
+
+.site-footer h2 {
+  margin-bottom: var(--ds-space-4);
+  color: var(--ds-color-text-primary);
+  font-family: var(--ds-font-label-family);
+  font-size: var(--ds-font-label-size);
+  font-weight: 600;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--ds-space-3);
+}
+
+.site-footer address {
+  font-style: normal;
+}
+
+.site-footer a {
+  color: var(--ds-color-text-secondary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-footer a:hover {
+    color: var(--ds-color-text-primary);
+  }
+}
+
+.site-footer__companies {
+  display: grid;
+  gap: var(--ds-space-4);
+  margin-top: var(--ds-space-7);
+}
+
+.site-footer__company {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-space-4);
+}
+
+.site-footer__company .icon-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--ds-radius-sm);
+}
+
+.site-footer__company .icon {
+  width: var(--ds-icon-size-md);
+  height: var(--ds-icon-size-md);
+}
+
+.site-footer__links li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-space-3);
+}
+
+.site-footer__links .icon {
+  width: var(--ds-icon-size-sm);
+  height: var(--ds-icon-size-sm);
+  margin-top: 0.15em;
+  color: var(--ds-color-text-tertiary);
+}
+
+.site-footer__companies strong {
+  display: block;
+  color: var(--ds-color-text-primary);
+  font-weight: 600;
+}
+
+.site-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3) var(--ds-space-7);
+  margin-top: var(--ds-space-10);
+  padding-top: var(--ds-space-7);
+  border-top: 1px solid var(--ds-color-border-default);
+  color: var(--ds-color-text-tertiary);
+}
+
+@media (min-width: 768px) {
+  .site-footer__grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}

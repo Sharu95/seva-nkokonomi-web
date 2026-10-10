@@ -1,0 +1,41 @@
+/* Icon: inline SVG from assets/icons.svg sprite. Inherits currentColor. */
+
+.icon {
+  flex: none;
+  width: var(--ds-icon-size-lg);
+  height: var(--ds-icon-size-lg);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--ds-icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Icon badge: tinted square holding an icon (service cards, contact list). */
+.icon-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--ds-radius-md);
+  background: var(--ds-color-accent-subtle);
+  color: var(--ds-color-accent-text);
+}
+
+.icon-badge--warm {
+  background: var(--ds-color-secondary-subtle);
+  color: var(--ds-color-secondary-text);
+}
+
+.icon-badge--highlight {
+  background: var(--ds-color-highlight-subtle);
+  color: var(--ds-color-highlight-text);
+}
+
+/* Inline sprite container: takes no space, stays out of the accessibility tree. */
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}

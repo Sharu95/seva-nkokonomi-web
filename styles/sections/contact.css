@@ -1,0 +1,84 @@
+/* Contact: intro + contact card (person, phone, e-mail, address). No form yet. */
+
+.contact {
+  display: grid;
+  gap: var(--ds-space-10);
+  align-items: start;
+}
+
+.contact__card {
+  display: grid;
+  gap: var(--ds-space-7);
+  padding: var(--ds-space-7);
+  border-radius: var(--ds-radius-2xl);
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-lg);
+}
+
+.contact__person {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-5);
+  padding-bottom: var(--ds-space-7);
+  border-bottom: 1px solid var(--ds-color-border-subtle);
+}
+
+.contact__person p {
+  color: var(--ds-color-text-secondary);
+  font-size: var(--ds-font-small-size);
+}
+
+.contact__list {
+  display: grid;
+  gap: var(--ds-space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.contact__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: var(--ds-space-5);
+}
+
+.contact__label {
+  display: block;
+  color: var(--ds-color-text-secondary);
+  font-size: var(--ds-font-small-size);
+}
+
+.contact__value {
+  display: block;
+  font-weight: 500;
+}
+
+address.contact__value {
+  font-style: normal;
+}
+
+.contact__item a {
+  color: var(--ds-color-text-primary);
+}
+
+.contact__actions {
+  display: grid;
+  gap: var(--ds-space-4);
+}
+
+@media (min-width: 640px) {
+  .contact__card {
+    padding: var(--ds-space-9);
+  }
+
+  .contact__actions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .contact {
+    grid-template-columns: 1fr 1.1fr;
+    gap: var(--ds-space-12);
+  }
+}

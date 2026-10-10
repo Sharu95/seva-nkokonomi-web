@@ -1,0 +1,87 @@
+/* Form: labelled fields, native validation states, honeypot. */
+
+.form {
+  display: grid;
+  gap: var(--ds-space-6);
+}
+
+.form__row {
+  display: grid;
+  gap: var(--ds-space-6);
+}
+
+@media (min-width: 640px) {
+  .form__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: grid;
+  gap: var(--ds-space-3);
+}
+
+.field__label {
+  font-size: var(--ds-font-label-size);
+  font-weight: var(--ds-font-label-weight);
+  line-height: var(--ds-font-label-line-height);
+}
+
+.field__optional {
+  color: var(--ds-color-text-tertiary);
+  font-weight: 400;
+}
+
+.field__input {
+  width: 100%;
+  min-height: var(--ds-input-height);
+  padding: var(--ds-space-4) var(--ds-space-5);
+  border: 1px solid var(--ds-color-border-strong);
+  border-radius: var(--ds-input-radius);
+  background: var(--ds-color-surface-default);
+  color: var(--ds-color-text-primary);
+  transition:
+    border-color var(--ds-duration-instant) var(--ds-easing-standard),
+    box-shadow var(--ds-duration-instant) var(--ds-easing-standard);
+}
+
+.field__input::placeholder {
+  color: var(--ds-color-text-tertiary);
+}
+
+textarea.field__input {
+  min-height: 140px;
+  resize: vertical;
+}
+
+select.field__input {
+  appearance: none;
+  padding-right: var(--ds-space-10);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234d5566' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--ds-space-4) center;
+  background-size: var(--ds-icon-size-md);
+}
+
+.field__input:focus-visible {
+  outline: none;
+  border-color: var(--ds-color-accent-default);
+  box-shadow: 0 0 0 3px var(--ds-color-accent-subtle);
+}
+
+/* Only flag invalid after the user has typed something. */
+.field__input:user-invalid {
+  border-color: var(--ds-color-danger-default);
+  box-shadow: 0 0 0 3px var(--ds-color-danger-subtle);
+}
+
+.form__note {
+  color: var(--ds-color-text-secondary);
+  font-size: var(--ds-font-small-size);
+  line-height: var(--ds-font-small-line-height);
+}
+
+/* Spam trap: hidden from people, visible to naive bots. */
+.form__honeypot {
+  display: none !important;
+}

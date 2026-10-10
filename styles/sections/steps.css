@@ -1,0 +1,74 @@
+/* Steps: numbered process ("Slik jobber vi"). */
+
+.steps {
+  display: grid;
+  gap: var(--ds-space-7);
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.step {
+  display: grid;
+  gap: var(--ds-space-3);
+  counter-increment: step;
+}
+
+.step::before {
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--ds-space-3);
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-color-highlight-default);
+  color: var(--ds-color-text-primary);
+  font-family: var(--ds-font-family-display);
+  font-size: var(--ds-font-label-size);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.step__title {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+
+.step__title .icon {
+  width: var(--ds-icon-size-md);
+  height: var(--ds-icon-size-md);
+  color: var(--ds-color-accent-default);
+}
+
+.step p {
+  color: var(--ds-color-text-secondary);
+}
+
+@media (min-width: 640px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Connector line between step markers */
+  .step {
+    position: relative;
+  }
+
+  .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 56px;
+    right: calc(-1 * var(--ds-space-7) + 16px);
+    height: 1px;
+    background: var(--ds-color-border-default);
+  }
+}

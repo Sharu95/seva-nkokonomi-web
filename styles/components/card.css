@@ -1,0 +1,53 @@
+/* Card: raised surface with hairline + soft shadow. Optional hover lift. */
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: var(--ds-space-stack-sm);
+  padding: var(--ds-card-padding);
+  border-radius: var(--ds-card-radius);
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-sm);
+  transition:
+    transform var(--ds-motion-spring-smooth-duration) var(--ds-motion-spring-smooth),
+    box-shadow var(--ds-duration-base) var(--ds-easing-standard);
+}
+
+.card .icon-badge {
+  margin-bottom: var(--ds-space-3);
+}
+
+.card p {
+  color: var(--ds-color-text-secondary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card--interactive:hover {
+    transform: translateY(calc(-1 * var(--ds-motion-distance-lift)));
+    box-shadow: var(--ds-shadow-md);
+  }
+}
+
+.card-grid {
+  display: grid;
+  gap: var(--ds-space-5);
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--ds-space-7);
+  }
+
+  .card-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

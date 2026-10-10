@@ -1,0 +1,80 @@
+/* About: text column + "why us" list. */
+
+.about {
+  display: grid;
+  gap: var(--ds-space-10);
+}
+
+.about__text {
+  display: grid;
+  gap: var(--ds-space-5);
+  align-content: start;
+}
+
+.about__text p {
+  max-width: var(--ds-size-prose);
+  color: var(--ds-color-text-secondary);
+}
+
+.about__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-7) var(--ds-space-10);
+  margin-top: var(--ds-space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.about__facts dt {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  color: var(--ds-color-text-secondary);
+  font-size: var(--ds-font-small-size);
+}
+
+.about__facts dt .icon {
+  width: var(--ds-icon-size-sm);
+  height: var(--ds-icon-size-sm);
+  color: var(--ds-color-accent-default);
+}
+
+.about__facts dd {
+  margin: 0;
+  font-family: var(--ds-font-family-display);
+  font-size: var(--ds-font-heading-md-size);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.benefits {
+  display: grid;
+  gap: var(--ds-space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.benefit {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--ds-space-2) var(--ds-space-5);
+  padding: var(--ds-space-inset-md);
+  border-radius: var(--ds-radius-lg);
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.benefit .icon-badge {
+  grid-row: span 2;
+}
+
+.benefit p {
+  color: var(--ds-color-text-secondary);
+}
+
+@media (min-width: 960px) {
+  .about {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--ds-space-12);
+  }
+}

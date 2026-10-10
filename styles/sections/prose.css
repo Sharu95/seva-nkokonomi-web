@@ -1,0 +1,50 @@
+/* Prose: long-form text pages (privacy policy, thank-you). */
+
+.prose {
+  max-width: var(--ds-size-prose);
+}
+
+.prose > * + * {
+  margin-top: var(--ds-space-5);
+}
+
+.prose h1 {
+  margin-bottom: var(--ds-space-7);
+}
+
+.prose h2 {
+  margin-top: var(--ds-space-10);
+  font-size: var(--ds-font-heading-sm-size);
+  font-weight: var(--ds-font-heading-sm-weight);
+  line-height: var(--ds-font-heading-sm-line-height);
+}
+
+.prose p,
+.prose li {
+  color: var(--ds-color-text-secondary);
+}
+
+.prose ul {
+  padding-left: var(--ds-space-7);
+}
+
+.prose li + li {
+  margin-top: var(--ds-space-3);
+}
+
+.prose strong {
+  color: var(--ds-color-text-primary);
+  font-weight: 600;
+}
+
+.page-center {
+  display: grid;
+  place-items: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.page-center .prose {
+  display: grid;
+  justify-items: center;
+}

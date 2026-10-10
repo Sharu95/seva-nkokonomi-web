@@ -1,0 +1,133 @@
+/* Hero: message + CTAs on the left, logo mark with service chips on the right. */
+
+.hero {
+  /* Header total height: the hero extends up behind the transparent resting header (no seam). */
+  --header-total: calc(var(--ds-size-header) + var(--ds-size-header-inset));
+  position: relative;
+  overflow: hidden;
+  margin-top: calc(-1 * var(--header-total));
+  padding-block: calc(var(--ds-space-11) + var(--header-total)) var(--ds-space-12);
+  background:
+    radial-gradient(60% 60% at 85% 20%, var(--ds-primitive-teal-3) 0%, transparent 70%),
+    radial-gradient(40% 40% at 70% 90%, var(--ds-primitive-apricot-3) 0%, transparent 70%),
+    var(--ds-color-bg);
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--ds-space-11);
+  align-items: center;
+}
+
+.hero__content {
+  display: grid;
+  gap: var(--ds-space-7);
+  max-width: 40rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-4);
+  margin-top: var(--ds-space-3);
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3) var(--ds-space-7);
+  padding: 0;
+  list-style: none;
+  color: var(--ds-color-text-secondary);
+  font-size: var(--ds-font-small-size);
+}
+
+.hero__meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+
+.hero__meta .icon {
+  width: var(--ds-icon-size-md);
+  height: var(--ds-icon-size-md);
+  color: var(--ds-color-accent-default);
+}
+
+/* Visual */
+.hero__visual {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 320px);
+  aspect-ratio: 1;
+}
+
+.hero__disc {
+  position: absolute;
+  inset: 6%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--ds-color-surface-default);
+  box-shadow: var(--ds-shadow-lg);
+}
+
+.hero__disc img {
+  width: 62%;
+  height: auto;
+}
+
+.hero__chip {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  padding: var(--ds-space-3) var(--ds-space-5) var(--ds-space-3) var(--ds-space-3);
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-md);
+  font-size: var(--ds-font-small-size);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.hero__chip .icon-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--ds-radius-full);
+}
+
+.hero__chip .icon {
+  width: var(--ds-icon-size-sm);
+  height: var(--ds-icon-size-sm);
+  stroke-width: 2.25;
+}
+
+.hero__chip--a {
+  top: 8%;
+  left: -2%;
+}
+
+.hero__chip--b {
+  top: 46%;
+  right: -4%;
+}
+
+.hero__chip--c {
+  bottom: 6%;
+  left: 6%;
+}
+
+@media (min-width: 960px) {
+  .hero {
+    padding-block: calc(var(--ds-space-13) + var(--header-total)) var(--ds-space-14);
+  }
+
+  .hero__inner {
+    grid-template-columns: 1.15fr 1fr;
+  }
+
+  .hero__visual {
+    width: min(100%, 420px);
+  }
+}

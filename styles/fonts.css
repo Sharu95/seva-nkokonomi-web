@@ -1,0 +1,35 @@
+/* Self-hosted variable fonts (OFL-1.1, via Fontsource). Latin subset covers æ ø å. */
+@font-face {
+  font-family: "Unbounded";
+  src: url("../fonts/unbounded-latin-wght.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("../fonts/geist-latin-wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Metric-adjusted fallbacks to reduce layout shift while fonts load (approximate values). */
+@font-face {
+  font-family: "Unbounded Fallback";
+  src: local("Arial");
+  size-adjust: 122%;
+  ascent-override: 82%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial");
+  size-adjust: 104%;
+  ascent-override: 92%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}

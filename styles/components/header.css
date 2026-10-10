@@ -1,0 +1,204 @@
+/*
+  Site header.
+  Resting (top of page): full-width bar, no background.
+  Scrolled ([data-scrolled], set by js/header.js): floats as a glass pill, inset from the edges.
+  The <header> keeps a constant height in both states, so content below never shifts.
+  Mobile menu via <details>, no JS.
+*/
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--ds-layer-sticky);
+  /* Room for the resting bar plus its top inset; the floating bar fits inside the same box. */
+  height: calc(var(--ds-size-header) + var(--ds-size-header-inset));
+  pointer-events: none; /* only the bar is interactive, the band around the pill is not */
+}
+
+.site-header__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-7);
+  width: 100%;
+  max-width: calc(var(--ds-size-content) + 2 * var(--ds-space-gutter));
+  height: var(--ds-size-header);
+  margin: var(--ds-size-header-inset) auto 0;
+  padding-inline: var(--ds-space-gutter);
+  border: 1px solid transparent;
+  border-radius: 0;
+  background-color: transparent;
+  pointer-events: auto;
+  transition:
+    width var(--ds-duration-slow) var(--ds-easing-emphasized),
+    max-width var(--ds-duration-slow) var(--ds-easing-emphasized),
+    height var(--ds-duration-slow) var(--ds-easing-emphasized),
+    margin var(--ds-duration-slow) var(--ds-easing-emphasized),
+    padding var(--ds-duration-slow) var(--ds-easing-emphasized),
+    border-radius var(--ds-duration-slow) var(--ds-easing-emphasized),
+    border-color var(--ds-duration-base) var(--ds-easing-standard),
+    background-color var(--ds-duration-base) var(--ds-easing-standard),
+    box-shadow var(--ds-duration-base) var(--ds-easing-standard);
+}
+
+/* Floating state */
+.site-header[data-scrolled] .site-header__bar {
+  width: calc(100% - 2 * var(--ds-size-floating-header-offset));
+  max-width: var(--ds-size-floating-header-max-width);
+  height: var(--ds-size-floating-header-height);
+  margin-top: var(--ds-size-floating-header-offset);
+  padding-inline: var(--ds-space-6) var(--ds-space-3);
+  border-color: var(--ds-material-glass-regular-border);
+  border-radius: var(--ds-radius-full);
+  background-color: var(--ds-material-glass-regular-fallback);
+  box-shadow: var(--ds-shadow-md);
+}
+
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .site-header[data-scrolled] .site-header__bar {
+    background-color: var(--ds-material-glass-regular-tint);
+    -webkit-backdrop-filter: blur(var(--ds-material-glass-regular-blur)) saturate(var(--ds-material-glass-regular-saturate));
+    backdrop-filter: blur(var(--ds-material-glass-regular-blur)) saturate(var(--ds-material-glass-regular-saturate));
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .site-header[data-scrolled] .site-header__bar {
+    background-color: var(--ds-material-glass-regular-fallback);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+.site-header__logo {
+  display: block;
+  margin-right: auto;
+  border-radius: var(--ds-radius-sm);
+}
+
+.site-header__logo img {
+  height: 34px;
+  width: auto;
+  transition: height var(--ds-duration-slow) var(--ds-easing-emphasized);
+}
+
+.site-header[data-scrolled] .site-header__logo img {
+  height: 30px;
+}
+
+.site-nav {
+  display: none;
+}
+
+.site-nav ul,
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: var(--ds-space-2);
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ds-size-hit-target);
+  padding-inline: var(--ds-space-4);
+  border-radius: var(--ds-radius-full);
+  color: var(--ds-color-text-secondary);
+  font-size: var(--ds-font-label-size);
+  font-weight: var(--ds-font-label-weight);
+  text-decoration: none;
+  transition:
+    color var(--ds-duration-instant) var(--ds-easing-standard),
+    background-color var(--ds-duration-instant) var(--ds-easing-standard);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-nav a:hover {
+    color: var(--ds-color-text-primary);
+    background: var(--ds-color-surface-sunken);
+  }
+}
+
+.site-header__cta {
+  display: none;
+}
+
+/* Mobile menu */
+.mobile-nav summary {
+  display: grid;
+  place-items: center;
+  width: var(--ds-size-hit-target);
+  height: var(--ds-size-hit-target);
+  border-radius: var(--ds-radius-full);
+  list-style: none;
+  cursor: pointer;
+  color: var(--ds-color-text-primary);
+}
+
+.mobile-nav summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav .icon-close,
+.mobile-nav[open] .icon-menu {
+  display: none;
+}
+
+.mobile-nav[open] .icon-close {
+  display: block;
+}
+
+.mobile-nav__panel {
+  position: absolute;
+  inset-inline: 0;
+  top: calc(100% + var(--ds-space-3));
+  padding: var(--ds-space-3) var(--ds-space-6) var(--ds-space-6);
+  border-radius: var(--ds-radius-xl);
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-lg);
+  animation: enter-down var(--ds-duration-base) var(--ds-easing-enter);
+}
+
+@keyframes enter-down {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-1 * var(--ds-motion-distance-md)));
+  }
+}
+
+.mobile-nav__panel a:not(.button) {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-4);
+  min-height: var(--ds-size-control-md);
+  border-bottom: 1px solid var(--ds-color-border-subtle);
+  color: var(--ds-color-text-primary);
+  font-size: var(--ds-font-lead-size);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mobile-nav__panel a:not(.button) .icon {
+  width: var(--ds-icon-size-md);
+  height: var(--ds-icon-size-md);
+  color: var(--ds-color-accent-default);
+}
+
+.mobile-nav__panel .button {
+  margin-top: var(--ds-space-6);
+}
+
+@media (min-width: 900px) {
+  .site-nav,
+  .site-header__cta {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+}

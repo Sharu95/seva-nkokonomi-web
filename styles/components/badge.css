@@ -1,0 +1,59 @@
+/* Badge: small pill for verified facts (e.g. Finanstilsynet approval) and area labels. */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  padding: var(--ds-space-3) var(--ds-space-5) var(--ds-space-3) var(--ds-space-4);
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-sm);
+  color: var(--ds-color-text-primary);
+  font-size: var(--ds-font-small-size);
+  font-weight: 500;
+  line-height: var(--ds-font-small-line-height);
+}
+
+.badge .icon {
+  width: var(--ds-icon-size-md);
+  height: var(--ds-icon-size-md);
+  color: var(--ds-color-accent-default);
+}
+
+a.badge {
+  text-decoration: none;
+  transition: box-shadow var(--ds-duration-base) var(--ds-easing-standard);
+}
+
+a.badge .icon--trailing {
+  width: var(--ds-icon-size-sm);
+  height: var(--ds-icon-size-sm);
+  color: var(--ds-color-text-tertiary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.badge:hover {
+    box-shadow: var(--ds-shadow-md);
+    color: var(--ds-color-text-primary);
+  }
+}
+
+/* "Leveres av …" line under an area heading. */
+.provider {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  color: var(--ds-color-text-secondary);
+  font-size: var(--ds-font-small-size);
+}
+
+.provider .icon {
+  width: var(--ds-icon-size-md);
+  height: var(--ds-icon-size-md);
+  color: var(--ds-color-text-tertiary);
+}
+
+.provider strong {
+  color: var(--ds-color-text-primary);
+  font-weight: 600;
+}
