@@ -8,7 +8,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const root = new URL("..", import.meta.url);
-const pages = ["index.html", "personvern.html"];
+const pages = ["index.html", "personvern.html", "aktuelt.html"];
 
 const sprite = await readFile(new URL("assets/icons.svg", root), "utf8");
 const symbols = new Map(

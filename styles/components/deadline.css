@@ -1,0 +1,94 @@
+/*
+  Deadline: one tax deadline as a link card. Top row: a calendar-style date block (day + month)
+  beside the audience pill and how far away it is; the title below, full width so it stays
+  readable in narrow cards. Built by js/feeds.js.
+*/
+
+.deadline {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "date meta"
+    "title title";
+  gap: var(--ds-space-4);
+  align-items: center;
+  align-content: start;
+  height: 100%;
+  padding: var(--ds-space-6);
+  border-radius: var(--ds-card-radius);
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-sm);
+  color: var(--ds-color-text-primary);
+  text-decoration: none;
+  transition:
+    transform var(--ds-motion-spring-smooth-duration) var(--ds-motion-spring-smooth),
+    box-shadow var(--ds-duration-base) var(--ds-easing-standard);
+}
+
+.deadline__date {
+  grid-area: date;
+  display: grid;
+  justify-items: center;
+  min-width: 3.25rem;
+  padding: var(--ds-space-2) var(--ds-space-3);
+  border-radius: var(--ds-radius-md);
+  background: var(--ds-color-highlight-subtle);
+  color: var(--ds-color-highlight-text);
+  line-height: 1;
+}
+
+.deadline__day {
+  font-size: var(--ds-font-heading-sm-size);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.deadline__month {
+  margin-top: var(--ds-space-1);
+  font-size: var(--ds-font-caption-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* The body wrapper only groups title + meta for the DOM; its children join the card grid. */
+.deadline__body {
+  display: contents;
+}
+
+.deadline__title {
+  grid-area: title;
+  font-size: var(--ds-font-small-size);
+  font-weight: 600;
+  line-height: var(--ds-font-small-line-height);
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.deadline__meta {
+  grid-area: meta;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-space-2) var(--ds-space-4);
+  color: var(--ds-color-text-tertiary);
+  font-size: var(--ds-font-caption-size);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .deadline:hover {
+    transform: translateY(calc(-1 * var(--ds-motion-distance-lift)));
+    box-shadow: var(--ds-shadow-md);
+    color: var(--ds-color-text-primary);
+  }
+
+  .deadline:hover .deadline__title {
+    color: var(--ds-color-accent-text);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deadline:hover {
+    transform: none;
+  }
+}

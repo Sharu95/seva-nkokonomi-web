@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aktuelt: skattefrister og nytt fra a-ordningen – NK Økonomi</title>
+    <meta
+      name="description"
+      content="Kommende frister fra skattekalenderen for bedrift og person, og siste nytt fra a-ordningen. Hentet fra Skatteetaten og oppdatert daglig."
+    />
+    <meta name="theme-color" content="#fef9f4" />
+    <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="canonical" href="https://nkokonomi.no/aktuelt.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="nb_NO" />
+    <meta property="og:site_name" content="NK Økonomi" />
+    <meta property="og:url" content="https://nkokonomi.no/aktuelt.html" />
+    <meta property="og:title" content="Aktuelt: skattefrister og nytt fra a-ordningen – NK Økonomi" />
+    <meta property="og:description" content="Kommende frister fra skattekalenderen for bedrift og person, og siste nytt fra a-ordningen." />
+    <meta property="og:image" content="https://nkokonomi.no/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NK Økonomi – Regnskap og rådgivning under ett tak. Hønefoss, nkokonomi.no" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aktuelt: skattefrister og nytt fra a-ordningen – NK Økonomi" />
+    <meta name="twitter:description" content="Kommende frister fra skattekalenderen for bedrift og person, og siste nytt fra a-ordningen." />
+    <meta name="twitter:image" content="https://nkokonomi.no/assets/og-image.png" />
+    <meta name="twitter:image:alt" content="NK Økonomi – Regnskap og rådgivning under ett tak. Hønefoss, nkokonomi.no" />
+
+    <link rel="preload" href="fonts/manrope-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preload" href="data/frister.json" as="fetch" crossorigin />
+    <link rel="preload" href="data/a-ordningen.json" as="fetch" crossorigin />
+    <script src="js/header.js" defer></script>
+    <script src="js/aktuelt.js" type="module"></script>
+  </head>
+  <body>
+    <!-- icons:start -->
+    <svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+      <symbol id="external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+    </svg>
+    <!-- icons:end -->
+    <a class="skip-link" href="#innhold">Hopp til innhold</a>
+
+    <header class="site-header">
+      <div class="site-header__bar">
+        <a class="site-header__logo" href="./" aria-label="NK Økonomi, til forsiden">
+          <img src="assets/logo-nk-okonomi-manrope.svg" alt="" width="179" height="34" />
+        </a>
+        <a class="button button--secondary button--sm" href="./">Til forsiden</a>
+      </div>
+    </header>
+
+    <main id="innhold" class="section aktuelt">
+      <div class="container">
+        <div class="section-head">
+          <p class="t-eyebrow"><svg class="icon" aria-hidden="true"><use href="#calendar" /></svg>Aktuelt</p>
+          <h1 class="t-heading-lg">Frister og nytt fra Skatteetaten</h1>
+          <p class="t-lead">
+            Kommende frister fra skattekalenderen og siste nytt fra a-ordningen, hentet fra Skatteetaten og oppdatert
+            daglig.
+          </p>
+          <p class="aktuelt__note">
+            <svg class="icon" aria-hidden="true"><use href="#message" /></svg>
+            <span>
+              Dette er generelle frister. Er du usikker på hva som gjelder for deg eller bedriften din,
+              <a href="./#kontakt">ta kontakt med oss</a>.
+            </span>
+          </p>
+        </div>
+
+        <!-- Shown until data renders, and stays if it can't (no data, failed request, no JS). -->
+        <p class="aktuelt__fallback" data-aktuelt-fallback>
+          Se oppdaterte frister hos Skatteetaten:
+          <a href="https://www.skatteetaten.no/bedrift-og-organisasjon/starte-og-drive/frister-gebyrer-og-tilleggsskatt/frister-og-oppgaver/" rel="noopener">frister for bedrift<svg class="icon" aria-hidden="true"><use href="#external" /></svg></a>
+          og
+          <a href="https://www.skatteetaten.no/person/skatt/skattekalender/" rel="noopener">skattekalender for person<svg class="icon" aria-hidden="true"><use href="#external" /></svg></a>.
+        </p>
+
+        <section class="aktuelt__group" aria-labelledby="frister-bedrift-title" data-deadlines="bedrift" hidden>
+          <h2 id="frister-bedrift-title" class="t-heading-md">Frister for bedrift</h2>
+          <div data-deadlines-list></div>
+          <a class="aktuelt__more" href="https://www.skatteetaten.no/bedrift-og-organisasjon/starte-og-drive/frister-gebyrer-og-tilleggsskatt/frister-og-oppgaver/" rel="noopener">
+            Se hele kalenderen hos Skatteetaten<svg class="icon" aria-hidden="true"><use href="#external" /></svg>
+          </a>
+        </section>
+
+        <section class="aktuelt__group" aria-labelledby="frister-person-title" data-deadlines="person" hidden>
+          <h2 id="frister-person-title" class="t-heading-md">Frister for person</h2>
+          <div data-deadlines-list></div>
+          <a class="aktuelt__more" href="https://www.skatteetaten.no/person/skatt/skattekalender/" rel="noopener">
+            Se hele kalenderen hos Skatteetaten<svg class="icon" aria-hidden="true"><use href="#external" /></svg>
+          </a>
+        </section>
+
+        <section class="aktuelt__group" aria-labelledby="a-ordningen-title" data-news hidden>
+          <h2 id="a-ordningen-title" class="t-heading-md">Nytt fra a-ordningen</h2>
+          <ul class="news-list" data-news-list></ul>
+        </section>
+
+        <p class="aktuelt__source" data-aktuelt-source hidden>
+          Kilde: <a href="https://www.skatteetaten.no/" rel="noopener">Skatteetaten</a>.
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__legal">
+          <span>© 2026 NK Økonomi</span>
+          <span class="t-tabular">NK Regnskap AS, org.nr. 937&nbsp;920&nbsp;326</span>
+          <span class="t-tabular">NK Økonomi Bistand AS, org.nr. 922&nbsp;859&nbsp;469&nbsp;MVA</span>
+          <a href="personvern.html">Personvern</a>
+          <a href="mailto:post@nkokonomi.no">post@nkokonomi.no</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

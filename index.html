@@ -111,6 +111,8 @@
     <script src="js/reveal.js" defer></script>
     <script src="js/nav.js" defer></script>
     <script src="js/hero.js" defer></script>
+    <link rel="preload" href="data/frister.json" as="fetch" crossorigin />
+    <script src="js/frister.js" type="module"></script>
   </head>
   <body>
     <!-- icons:start -->
@@ -159,6 +161,7 @@
             <li><a href="#regnskap">Regnskap</a></li>
             <li><a href="#radgivning">Rådgivning</a></li>
             <li><a href="#om-oss">Om oss</a></li>
+            <li><a href="aktuelt.html">Aktuelt</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </nav>
@@ -174,6 +177,7 @@
               <li><a href="#regnskap"><svg class="icon" aria-hidden="true"><use href="#calculator" /></svg>Regnskap</a></li>
               <li><a href="#radgivning"><svg class="icon" aria-hidden="true"><use href="#compass" /></svg>Rådgivning</a></li>
               <li><a href="#om-oss"><svg class="icon" aria-hidden="true"><use href="#users" /></svg>Om oss</a></li>
+              <li><a href="aktuelt.html"><svg class="icon" aria-hidden="true"><use href="#calendar" /></svg>Aktuelt</a></li>
               <li><a href="#kontakt"><svg class="icon" aria-hidden="true"><use href="#message" /></svg>Kontakt</a></li>
             </ul>
             <a class="button button--primary button--block" href="tel:+4740556569">
@@ -188,6 +192,27 @@
     <main id="innhold">
       <!-- Hero -->
       <section class="hero" aria-labelledby="hero-title">
+        <!-- Upcoming tax deadlines (js/frister.js). Ships hidden; shown only when there is data. -->
+        <div class="container">
+          <aside class="frister" aria-labelledby="frister-title" data-frister hidden>
+            <div class="frister__head">
+              <p id="frister-title" class="frister__title">
+                <svg class="icon" aria-hidden="true"><use href="#calendar" /></svg>Kommende frister
+              </p>
+              <div class="pill-filter" role="group" aria-label="Vis frister for" data-frister-filter>
+                <button type="button" class="pill-filter__option" data-audience="bedrift" aria-pressed="true">Bedrift</button>
+                <button type="button" class="pill-filter__option" data-audience="person" aria-pressed="false">Person</button>
+              </div>
+              <a class="frister__all" href="aktuelt.html">
+                Se alle frister<svg class="icon" aria-hidden="true"><use href="#arrow-right" /></svg>
+              </a>
+            </div>
+            <ol class="frister__list" data-frister-list></ol>
+            <p class="frister__source">
+              Kilde: <a href="https://www.skatteetaten.no/bedrift-og-organisasjon/starte-og-drive/frister-gebyrer-og-tilleggsskatt/frister-og-oppgaver/" rel="noopener" data-frister-source>Skatteetaten</a>. Generelle frister, spør oss om hva som gjelder for deg.
+            </p>
+          </aside>
+        </div>
         <div class="container hero__inner">
           <div class="hero__content">
             <p class="t-eyebrow enter" style="--i: 0"><svg class="icon" aria-hidden="true"><use href="#pin" /></svg>Regnskap og rådgivning i Hønefoss</p>
@@ -539,6 +564,7 @@
               <li><svg class="icon" aria-hidden="true"><use href="#calculator" /></svg><a href="#regnskap">Regnskap</a></li>
               <li><svg class="icon" aria-hidden="true"><use href="#compass" /></svg><a href="#radgivning">Rådgivning</a></li>
               <li><svg class="icon" aria-hidden="true"><use href="#users" /></svg><a href="#om-oss">Om oss</a></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#calendar" /></svg><a href="aktuelt.html">Aktuelt</a></li>
               <li><svg class="icon" aria-hidden="true"><use href="#shield" /></svg><a href="personvern.html">Personvern</a></li>
             </ul>
           </div>

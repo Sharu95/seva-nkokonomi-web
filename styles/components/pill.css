@@ -1,0 +1,81 @@
+/*
+  Pill: small rounded label (audience tag on a deadline: Bedrift = teal, Person = apricot).
+  PillFilter: a row of toggle pills (aria-pressed) that filters a list. Hit target stays 44px
+  even though the pill looks smaller.
+*/
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--ds-space-1) var(--ds-space-4);
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-color-surface-sunken);
+  color: var(--ds-color-text-secondary);
+  font-size: var(--ds-font-caption-size);
+  font-weight: 600;
+  line-height: var(--ds-font-caption-line-height);
+  white-space: nowrap;
+}
+
+.pill--bedrift {
+  background: var(--ds-color-accent-subtle);
+  color: var(--ds-color-accent-text);
+}
+
+.pill--person {
+  background: var(--ds-color-secondary-subtle);
+  color: var(--ds-color-secondary-text);
+}
+
+.pill-filter {
+  display: inline-flex;
+  gap: var(--ds-space-2);
+  padding: var(--ds-space-1);
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-color-surface-sunken);
+}
+
+.pill-filter[hidden] {
+  display: none;
+}
+
+.pill-filter__option {
+  position: relative;
+  min-height: var(--ds-size-control-sm);
+  padding-inline: var(--ds-space-5);
+  border: 0;
+  border-radius: var(--ds-radius-full);
+  background: transparent;
+  color: var(--ds-color-text-secondary);
+  font: inherit;
+  font-size: var(--ds-font-small-size);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--ds-duration-quick) var(--ds-easing-standard),
+    color var(--ds-duration-quick) var(--ds-easing-standard),
+    box-shadow var(--ds-duration-quick) var(--ds-easing-standard);
+}
+
+/* Extend the hit area to 44px without growing the visual pill. */
+.pill-filter__option::after {
+  content: "";
+  position: absolute;
+  inset: calc((var(--ds-size-control-sm) - var(--ds-size-hit-target)) / 2) 0;
+}
+
+.pill-filter__option[hidden] {
+  display: none;
+}
+
+.pill-filter__option[aria-pressed="true"] {
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-sm);
+  color: var(--ds-color-text-primary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pill-filter__option[aria-pressed="false"]:hover {
+    color: var(--ds-color-text-primary);
+  }
+}

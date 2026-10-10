@@ -1,0 +1,115 @@
+/*
+  "Kommende frister" strip at the top of the hero (js/frister.js). Static row of deadline cards:
+  a grid on wide screens, a sideways swipe with snap points on narrow ones. Nothing moves on its own.
+  Hidden until there is data; it then fades in once.
+*/
+
+.frister {
+  display: grid;
+  /* minmax(0, …): the scrolling list must not widen the track (and the page) to fit all cards. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--ds-space-5);
+  margin-bottom: var(--ds-space-10);
+}
+
+.frister[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .frister {
+    animation: frister-in var(--ds-duration-reveal) var(--ds-easing-enter) both;
+  }
+}
+
+@keyframes frister-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--ds-space-3));
+  }
+}
+
+.frister__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-space-4) var(--ds-space-6);
+}
+
+.frister__title {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+  margin: 0;
+  font-family: var(--ds-font-eyebrow-family);
+  font-size: var(--ds-font-eyebrow-size);
+  font-weight: var(--ds-font-eyebrow-weight);
+  letter-spacing: var(--ds-font-eyebrow-tracking);
+  color: var(--ds-color-text-primary);
+}
+
+.frister__title .icon {
+  width: var(--ds-icon-size-md);
+  height: var(--ds-icon-size-md);
+  color: var(--ds-color-accent-default);
+}
+
+.frister__all {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  min-height: var(--ds-size-hit-target);
+  margin-left: auto;
+  font-size: var(--ds-font-small-size);
+  font-weight: 600;
+}
+
+.frister__all .icon {
+  width: var(--ds-icon-size-sm);
+  height: var(--ds-icon-size-sm);
+}
+
+.frister__list {
+  display: grid;
+  grid-auto-flow: column;
+  /* Wide screens: all cards share the row. */
+  grid-auto-columns: minmax(0, 1fr);
+  gap: var(--ds-space-4);
+  margin: 0;
+  /* Room for the card shadows and hover lift inside the scroll box. */
+  padding: var(--ds-space-3) var(--ds-space-2) var(--ds-space-4);
+  margin-inline: calc(-1 * var(--ds-space-2));
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--ds-space-2);
+  scrollbar-width: none;
+}
+
+.frister__list::-webkit-scrollbar {
+  display: none;
+}
+
+.frister__list > li {
+  scroll-snap-align: start;
+}
+
+/* Below ~5 comfortable cards: swipe row, cards narrower than the row so the next one peeks in. */
+@media (max-width: 1099px) {
+  .frister__list {
+    grid-auto-columns: min(80%, 16rem);
+  }
+}
+
+@media (max-width: 599px) {
+  .frister__all {
+    margin-left: 0;
+  }
+}
+
+.frister__source {
+  margin: 0;
+  color: var(--ds-color-text-tertiary);
+  font-size: var(--ds-font-caption-size);
+}

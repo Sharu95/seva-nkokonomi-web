@@ -129,8 +129,16 @@ All live in `styles/components/` (one file per component, class names map 1:1 to
 | Form / Field | `form.css` | Ready for the contact form; **not imported** until the form returns |
 | SiteHeader | `header.css` + `js/header.js` + `js/nav.js` | Rest: full-width, transparent, `size.headerInset` (24px) from the top. Scrolled (`[data-scrolled]`): floating glass pill, `size.floatingHeader.offset` (24px; `offsetCompact` 16px below 900px) from the top. The header is `display: flow-root` so the bar's margin stays inside the sticky box (otherwise it collapses and the pill sits flush at 0px). Constant outer height, so no layout shift. Active-section pill via `js/nav.js`. Works without JS (stays at rest). Mobile menu via `<details>`. |
 | SiteFooter | `footer.css` | Org.nr., contact, links |
+| Pill / PillFilter | `pill.css` | Small audience label: `--bedrift` (teal, like accounting), `--person` (apricot). `.pill-filter`: toggle pills with `aria-pressed`, visually 36px, 44px hit area |
+| Deadline | `deadline.css` + `js/feeds.js` | Tax deadline link card: orange date chip (day + month, a small mark like the step numbers), pill and "Om n dager", title below at full width. Lifts on hover like cards |
 
-Sections (`styles/sections/`): hero, steps, about, contact, prose.
+Sections (`styles/sections/`): hero, frister, aktuelt, steps, about, contact, prose.
+
+**Frister and Aktuelt (feed content).** Deadlines and a-ordningen news come from Skatteetaten's RSS feeds, fetched daily by CI into `data/*.json` (Skatteetaten blocks cross-origin requests). Rules:
+- Ships hidden, shown only with data. Missing data or a failed request means no strip on the front page; on `aktuelt.html` a link to Skatteetaten's calendars is shown instead. Nothing ever breaks.
+- Past deadlines are filtered out in the browser (Norwegian date), so stale data never shows an expired date. A filter needs at least 2 upcoming deadlines to be offered; Bedrift is the default.
+- Static: the front-page row is a grid on wide screens and a swipe row with snap points below 1100px. No auto-scrolling (calm motion, WCAG 2.2.2). It fades in once.
+- Feed text is inserted as text only, never as HTML. Always credit Skatteetaten and say these are general deadlines.
 
 ## 7. Do / don't
 - **Do** use semantic tokens (`--ds-color-text-secondary`), **don't** use primitives or hex in components.

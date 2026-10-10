@@ -1,0 +1,134 @@
+/*
+  Aktuelt page (aktuelt.html, js/aktuelt.js): deadlines grouped by month in a card grid,
+  then a-ordningen news as a simple list. Sections are hidden until they have content.
+*/
+
+.aktuelt__note {
+  display: flex;
+  gap: var(--ds-space-3);
+  align-items: flex-start;
+  padding: var(--ds-space-4) var(--ds-space-5);
+  border-radius: var(--ds-radius-lg);
+  background: var(--ds-color-surface-warm);
+  color: var(--ds-color-text-secondary);
+  font-size: var(--ds-font-small-size);
+  line-height: var(--ds-font-small-line-height);
+}
+
+.aktuelt__note .icon {
+  flex: none;
+  width: var(--ds-icon-size-md);
+  height: var(--ds-icon-size-md);
+  margin-top: 0.15em;
+  color: var(--ds-color-secondary-text);
+}
+
+.aktuelt__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  min-height: var(--ds-size-hit-target);
+  margin-top: var(--ds-space-5);
+  font-size: var(--ds-font-small-size);
+  font-weight: 600;
+}
+
+.aktuelt__more .icon,
+.aktuelt__fallback .icon {
+  margin-left: var(--ds-space-1);
+  width: var(--ds-icon-size-sm);
+  height: var(--ds-icon-size-sm);
+  vertical-align: -0.1em;
+}
+
+.aktuelt__fallback[hidden],
+.aktuelt__group[hidden],
+.aktuelt__source[hidden] {
+  display: none;
+}
+
+.aktuelt__group + .aktuelt__group {
+  margin-top: var(--ds-space-11);
+}
+
+.aktuelt__group > h2 {
+  margin-bottom: var(--ds-space-7);
+}
+
+.aktuelt__month + .aktuelt__month {
+  margin-top: var(--ds-space-8);
+}
+
+.aktuelt__month-title {
+  margin-bottom: var(--ds-space-4);
+  color: var(--ds-color-text-tertiary);
+  font-size: var(--ds-font-eyebrow-size);
+  font-weight: var(--ds-font-eyebrow-weight);
+  letter-spacing: var(--ds-font-eyebrow-tracking);
+}
+
+.aktuelt__source {
+  margin-top: var(--ds-space-10);
+  color: var(--ds-color-text-tertiary);
+  font-size: var(--ds-font-caption-size);
+}
+
+.deadline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: var(--ds-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  max-width: var(--ds-size-prose);
+  list-style: none;
+}
+
+.news-list > li + li {
+  border-top: 1px solid var(--ds-color-border-subtle);
+}
+
+.news-item {
+  display: grid;
+  gap: var(--ds-space-3);
+  padding-block: var(--ds-space-6);
+}
+
+.news-item__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-space-2) var(--ds-space-4);
+  margin: 0;
+  color: var(--ds-color-text-tertiary);
+  font-size: var(--ds-font-caption-size);
+}
+
+.news-item__title {
+  font-size: var(--ds-font-heading-sm-size);
+  font-weight: var(--ds-font-heading-sm-weight);
+  line-height: var(--ds-font-heading-sm-line-height);
+}
+
+.news-item__title a {
+  color: var(--ds-color-text-primary);
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .news-item__title a:hover {
+    color: var(--ds-color-accent-text);
+    text-decoration: underline;
+  }
+}
+
+.news-item__summary {
+  margin: 0;
+  color: var(--ds-color-text-secondary);
+}
