@@ -1,6 +1,6 @@
 # nkokonomi-web
 
-Landing site for **NK Økonomi**, the umbrella brand for NK Regnskap AS (accounting, org.nr. 937 920 326) and NK Økonomi Bistand AS (advisory, org.nr. 922 859 469), Hønefoss. Static HTML and CSS, no build step for the pages, no form. One small progressive script for the floating header.
+Landing site for **NK Økonomi**, the umbrella brand for NK Regnskap AS (accounting, org.nr. 937 920 326) and NK Økonomi Bistand AS (advisory, org.nr. 922 859 469), Hønefoss. Static HTML and CSS, no build step for the pages, no form. Two small progressive scripts: floating header and scroll reveals.
 
 ## Run locally
 ```sh
@@ -25,6 +25,7 @@ assets/               Logo variants (logo-nk-okonomi.svg = umbrella lockup, pend
                       logo-horizontal.svg = NK Økonomi Bistand lockup), icon sprite, touch icon
 fonts/                Self-hosted Unbounded + Geist (OFL-1.1)
 js/header.js          Floating header on scroll (progressive: the page works without it)
+js/reveal.js          Scroll-enter reveals: letter blur on headings, fade-up groups (skipped for reduced motion)
 scripts/
   build-tokens.mjs    tokens.json → styles/tokens.css
   inline-icons.mjs    assets/icons.svg → inline sprite in each page (npm run icons)

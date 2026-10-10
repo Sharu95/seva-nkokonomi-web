@@ -103,9 +103,14 @@ Fonts are self-hosted variable woff2 (latin subset, covers æ ø å), `font-disp
 - Default spring `smooth` (0.45s, bounce 0); `gentle` for hero enter; `micro` for press.
 - CSS gets springs as generated `linear()` easings plus a settle duration.
 - Hero enter: fade-up 16px, stagger 50ms per item, max 5 items. Plays once.
+- Scroll reveals (`js/reveal.js`, `reveal.css`), each plays once when the element enters view:
+  - Headings (`data-reveal="chars"`): letters go from transparent + `motion.blur.enter` blur to sharp, `duration.reveal` with `easing.enter`, `motion.staggerChar` between letters. Screen readers get the plain text.
+  - Eyebrows: settle from `motion.distance.sm` above and `motion.scale.enter`.
+  - Text, cards, steps (`data-reveal="up"`, `data-reveal-group`): fade up `motion.distance.lg`, `motion.staggerGroup` between items.
+  - Hidden states apply only under `.js-reveal` (set before first paint, removed for reduced motion), so no-JS visitors see everything.
 - Cards lift 2px on hover (pointer devices only). Buttons scale to 0.97 on press.
-- Header float: width, height, inset and radius ease with `duration.slow` + `easing.emphasized`; glass and shadow fade with `duration.base`.
-- `prefers-reduced-motion`: animations and transitions become near-instant, smooth scroll is off.
+- Header float (after crafted.so): the shape contracts first (`duration.morph`, `easing.inOut`), then the glass, border and shadow fade in (`duration.base`, delayed `duration.quick`). Returning to rest morphs everything together. The pill hugs its content (width measured in `js/header.js`).
+- `prefers-reduced-motion`: animations and transitions become near-instant (no delays), smooth scroll is off, scroll reveals are skipped.
 
 ## 6. Components
 All live in `styles/components/` (one file per component, class names map 1:1 to future React components).
