@@ -9,6 +9,9 @@
 .site-header {
   position: sticky;
   top: 0;
+  /* New block formatting context: keeps the bar's top margin inside the header.
+     Without it the margin collapses through, and the sticky bar ends up flush at 0px. */
+  display: flow-root;
   z-index: var(--ds-layer-sticky);
   /* Room for the resting bar plus its top inset; the floating bar fits inside the same box. */
   height: calc(var(--ds-size-header) + var(--ds-size-header-inset));
@@ -64,6 +67,13 @@
   border-radius: var(--ds-radius-full);
   background-color: var(--ds-material-glass-regular-fallback);
   box-shadow: var(--ds-shadow-md);
+}
+
+@media (max-width: 899px) {
+  .site-header[data-scrolled] .site-header__bar {
+    width: calc(100% - 2 * var(--ds-size-floating-header-offset-compact));
+    margin-top: var(--ds-size-floating-header-offset-compact);
+  }
 }
 
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {

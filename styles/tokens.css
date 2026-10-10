@@ -136,8 +136,9 @@
   --ds-size-header: 72px;
   --ds-size-floating-header-height: 56px;
   --ds-size-floating-header-max-width: 1040px;
-  --ds-size-floating-header-offset: 16px;
-  --ds-size-header-inset: var(--ds-space-4);
+  --ds-size-floating-header-offset: 24px;
+  --ds-size-floating-header-offset-compact: 16px;
+  --ds-size-header-inset: var(--ds-space-7);
   --ds-radius-xs: 4px;
   --ds-radius-sm: 8px;
   --ds-radius-md: 12px;
