@@ -19,6 +19,9 @@
 
     <link rel="preload" href="fonts/unbounded-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="fonts/geist-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      document.documentElement.classList.add("js-reveal");
+    </script>
     <link rel="stylesheet" href="styles/main.css" />
 
     <script type="application/ld+json">
@@ -61,6 +64,7 @@
       ]
     </script>
     <script src="js/header.js" defer></script>
+    <script src="js/reveal.js" defer></script>
   </head>
   <body>
     <!-- icons:start -->
@@ -141,7 +145,7 @@
         <div class="container hero__inner">
           <div class="hero__content">
             <p class="t-eyebrow enter" style="--i: 0"><svg class="icon" aria-hidden="true"><use href="#pin" /></svg>Regnskap og rådgivning i Hønefoss</p>
-            <h1 id="hero-title" class="t-display enter" style="--i: 1">Regnskap og rådgivning under ett tak</h1>
+            <h1 id="hero-title" class="t-display" data-reveal="chars">Regnskap og rådgivning under ett tak</h1>
             <p class="t-lead enter" style="--i: 2">
               NK Økonomi tar hånd om regnskapet og gir deg råd når økonomien skal tas videre. Én kontaktperson, ett sted å
               henvende seg.
@@ -191,9 +195,9 @@
       <!-- Accounting: NK Regnskap AS -->
       <section id="regnskap" class="section section--tint" aria-labelledby="regnskap-title">
         <div class="container">
-          <div class="section-head">
-            <p class="t-eyebrow"><svg class="icon" aria-hidden="true"><use href="#calculator" /></svg>Regnskap</p>
-            <h2 id="regnskap-title" class="t-heading-lg">Regnskapet i trygge hender</h2>
+          <div class="section-head" data-reveal-group>
+            <p class="t-eyebrow" data-reveal="eyebrow"><svg class="icon" aria-hidden="true"><use href="#calculator" /></svg>Regnskap</p>
+            <h2 id="regnskap-title" class="t-heading-lg" data-reveal="chars">Regnskapet i trygge hender</h2>
             <p class="t-lead">Vi fører regnskapet løpende og sørger for at alt blir levert riktig og til fristen, så du kan bruke tiden på bedriften.</p>
             <p class="provider"><svg class="icon" aria-hidden="true"><use href="#building" /></svg><span>Leveres av <strong>NK Regnskap AS</strong>, godkjent regnskapsselskap.</span></p>
             <p>
@@ -205,7 +209,7 @@
             </p>
           </div>
 
-          <ul class="card-grid" role="list">
+          <ul class="card-grid" role="list" data-reveal-group>
             <li class="card card--interactive">
               <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#book" /></svg></span>
               <h3 class="t-heading-sm">Bokføring</h3>
@@ -243,14 +247,14 @@
       <!-- Advisory: NK Økonomi Bistand AS -->
       <section id="radgivning" class="section section--warm" aria-labelledby="radgivning-title">
         <div class="container">
-          <div class="section-head">
-            <p class="t-eyebrow"><svg class="icon" aria-hidden="true"><use href="#compass" /></svg>Rådgivning</p>
-            <h2 id="radgivning-title" class="t-heading-lg">Råd når økonomien skal videre</h2>
+          <div class="section-head" data-reveal-group>
+            <p class="t-eyebrow" data-reveal="eyebrow"><svg class="icon" aria-hidden="true"><use href="#compass" /></svg>Rådgivning</p>
+            <h2 id="radgivning-title" class="t-heading-lg" data-reveal="chars">Råd når økonomien skal videre</h2>
             <p class="t-lead">Når du står foran viktige valg, hjelper vi deg å se tallene, mulighetene og konsekvensene før du bestemmer deg.</p>
             <p class="provider"><svg class="icon" aria-hidden="true"><use href="#building" /></svg><span>Leveres av <strong>NK Økonomi Bistand AS</strong>.</span></p>
           </div>
 
-          <ul class="card-grid card-grid--2" role="list">
+          <ul class="card-grid card-grid--2" role="list" data-reveal-group>
             <li class="card card--interactive">
               <span class="icon-badge icon-badge--warm"><svg class="icon" aria-hidden="true"><use href="#landmark" /></svg></span>
               <h3 class="t-heading-sm">Skatterådgivning</h3>
@@ -278,12 +282,12 @@
       <!-- Process -->
       <section id="slik-jobber-vi" class="section" aria-labelledby="prosess-title">
         <div class="container">
-          <div class="section-head">
-            <p class="t-eyebrow"><svg class="icon" aria-hidden="true"><use href="#route" /></svg>Slik jobber vi</p>
-            <h2 id="prosess-title" class="t-heading-lg">Enkelt å komme i gang</h2>
+          <div class="section-head" data-reveal-group>
+            <p class="t-eyebrow" data-reveal="eyebrow"><svg class="icon" aria-hidden="true"><use href="#route" /></svg>Slik jobber vi</p>
+            <h2 id="prosess-title" class="t-heading-lg" data-reveal="chars">Enkelt å komme i gang</h2>
           </div>
 
-          <ol class="steps">
+          <ol class="steps" data-reveal-group>
             <li class="step">
               <h3 class="t-heading-sm step__title"><svg class="icon" aria-hidden="true"><use href="#phone" /></svg>Ta kontakt</h3>
               <p>Ring oss eller send en e-post. Fortell kort hva du trenger hjelp med.</p>
@@ -307,9 +311,9 @@
       <!-- About -->
       <section id="om-oss" class="section section--sunken" aria-labelledby="om-title">
         <div class="container about">
-          <div class="about__text">
-            <p class="t-eyebrow"><svg class="icon" aria-hidden="true"><use href="#users" /></svg>Om oss</p>
-            <h2 id="om-title" class="t-heading-lg">Lokalt, personlig og samlet under NK</h2>
+          <div class="about__text" data-reveal-group>
+            <p class="t-eyebrow" data-reveal="eyebrow"><svg class="icon" aria-hidden="true"><use href="#users" /></svg>Om oss</p>
+            <h2 id="om-title" class="t-heading-lg" data-reveal="chars">Lokalt, personlig og samlet under NK</h2>
             <p>
               NK Økonomi Bistand AS ble etablert i Hønefoss i 2019 for å hjelpe bedrifter og privatpersoner med
               økonomien. I 2026 kom NK Regnskap AS, godkjent av Finanstilsynet som regnskapsselskap.
@@ -330,7 +334,7 @@
             </dl>
           </div>
 
-          <ul class="benefits">
+          <ul class="benefits" data-reveal-group>
             <li class="benefit">
               <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#user" /></svg></span>
               <h3 class="t-heading-sm">Personlig oppfølging</h3>
@@ -358,16 +362,16 @@
       <!-- Contact -->
       <section id="kontakt" class="section" aria-labelledby="kontakt-title">
         <div class="container contact">
-          <div class="section-head section-head--flush">
-            <p class="t-eyebrow"><svg class="icon" aria-hidden="true"><use href="#message" /></svg>Kontakt</p>
-            <h2 id="kontakt-title" class="t-heading-lg">La oss ta en prat</h2>
+          <div class="section-head section-head--flush" data-reveal-group>
+            <p class="t-eyebrow" data-reveal="eyebrow"><svg class="icon" aria-hidden="true"><use href="#message" /></svg>Kontakt</p>
+            <h2 id="kontakt-title" class="t-heading-lg" data-reveal="chars">La oss ta en prat</h2>
             <p class="t-lead">
               Enten det gjelder regnskap eller rådgivning: ring eller send en e-post, så tar vi en uforpliktende samtale
               og gir deg et tilbud.
             </p>
           </div>
 
-          <div class="contact__card">
+          <div class="contact__card" data-reveal="up">
             <div class="contact__person">
               <span class="icon-badge"><svg class="icon" aria-hidden="true"><use href="#user" /></svg></span>
               <div>

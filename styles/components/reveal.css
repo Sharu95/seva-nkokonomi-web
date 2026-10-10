@@ -1,0 +1,62 @@
+/*
+  Scroll-enter reveals (js/reveal.js).
+  Hidden states only apply under .js-reveal, which is set before first paint and removed
+  when the user prefers reduced motion. Without JS everything is visible.
+
+  data-reveal="chars"   heading: letters go from blurred and transparent to sharp, staggered
+  data-reveal="eyebrow" small label: settles from slightly above and smaller
+  data-reveal="up"      fades up (default for children of data-reveal-group)
+  data-reveal-group     reveals its children together, staggered by --reveal-i
+*/
+
+.reveal-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.reveal-char {
+  display: inline-block;
+}
+
+.js-reveal [data-reveal="chars"]:not([data-split]) {
+  opacity: 0;
+}
+
+.js-reveal [data-reveal="chars"] .reveal-char {
+  opacity: 0;
+  filter: blur(var(--ds-motion-blur-enter));
+  transition:
+    opacity var(--ds-duration-reveal) var(--ds-easing-enter),
+    filter var(--ds-duration-reveal) var(--ds-easing-enter);
+  transition-delay: calc(var(--reveal-c, 0) * var(--ds-motion-stagger-char));
+}
+
+.js-reveal [data-reveal="chars"].is-revealed .reveal-char {
+  opacity: 1;
+  filter: none;
+}
+
+.js-reveal [data-reveal="eyebrow"] {
+  opacity: 0;
+  transform: translateY(calc(-1 * var(--ds-motion-distance-sm))) scale(var(--ds-motion-scale-enter));
+  transform-origin: left center;
+}
+
+.js-reveal [data-reveal="up"] {
+  opacity: 0;
+  transform: translateY(var(--ds-motion-distance-lg));
+}
+
+.js-reveal [data-reveal="eyebrow"],
+.js-reveal [data-reveal="up"] {
+  transition:
+    opacity var(--ds-duration-reveal) var(--ds-easing-enter),
+    transform var(--ds-duration-reveal) var(--ds-easing-enter);
+  transition-delay: calc(var(--reveal-delay, 0ms) + var(--reveal-i, 0) * var(--ds-motion-stagger-group));
+}
+
+.js-reveal [data-reveal="eyebrow"].is-revealed,
+.js-reveal [data-reveal="up"].is-revealed {
+  opacity: 1;
+  transform: none;
+}
