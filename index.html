@@ -64,6 +64,7 @@
     </script>
     <script src="js/header.js" defer></script>
     <script src="js/reveal.js" defer></script>
+    <script src="js/hero.js" defer></script>
   </head>
   <body>
     <!-- icons:start -->
@@ -171,22 +172,62 @@
             </ul>
           </div>
 
-          <div class="hero__visual enter" style="--i: 2" aria-hidden="true">
-            <div class="hero__disc">
-              <img src="assets/logo-mark.svg" alt="" width="392" height="364" />
+          <!-- Illustration of the service (no real figures): a calm overview plus tasks done on time. -->
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero__layer" style="--depth: 1">
+              <div class="hero-card hero-card--chart enter" style="--i: 2">
+                <div class="hero-card__head">
+                  <svg class="hero-ring" viewBox="0 0 40 40">
+                    <circle class="hero-ring__track" cx="20" cy="20" r="16" />
+                    <circle class="hero-ring__value" cx="20" cy="20" r="16" pathLength="1" />
+                    <path class="hero-ring__check" pathLength="1" d="M14 20.5l4 4 8-8.5" />
+                  </svg>
+                  <div>
+                    <p class="hero-card__title">Bilag bokført</p>
+                    <p class="hero-card__meta">Oppdatert løpende</p>
+                  </div>
+                </div>
+                <svg class="hero-chart" viewBox="0 0 300 150">
+                  <g class="hero-chart__grid">
+                    <line x1="0" y1="30" x2="300" y2="30" />
+                    <line x1="0" y1="75" x2="300" y2="75" />
+                    <line x1="0" y1="120" x2="300" y2="120" />
+                  </g>
+                  <g class="hero-chart__bars">
+                    <rect x="14" y="88" width="28" height="62" rx="6" style="--b: 0" />
+                    <rect x="62" y="74" width="28" height="76" rx="6" style="--b: 1" />
+                    <rect x="110" y="80" width="28" height="70" rx="6" style="--b: 2" />
+                    <rect x="158" y="58" width="28" height="92" rx="6" style="--b: 3" />
+                    <rect x="206" y="44" width="28" height="106" rx="6" style="--b: 4" />
+                    <rect x="254" y="26" width="28" height="124" rx="6" style="--b: 5" />
+                  </g>
+                  <path class="hero-chart__line" pathLength="1" d="M28 72 C 52 66, 60 58, 76 56 S 110 66, 124 62 S 154 40, 172 38 S 206 28, 220 24 S 256 12, 268 8" />
+                  <circle class="hero-chart__dot" cx="268" cy="8" r="5" />
+                </svg>
+                <div class="hero-chart__axis t-tabular">
+                  <span>jan</span><span>feb</span><span>mar</span><span>apr</span><span>mai</span><span>jun</span>
+                </div>
+              </div>
             </div>
-            <span class="hero__chip hero__chip--a">
-              <span class="icon-badge"><svg class="icon"><use href="#calculator" /></svg></span>
-              Regnskap
-            </span>
-            <span class="hero__chip hero__chip--b">
-              <span class="icon-badge icon-badge--warm"><svg class="icon"><use href="#landmark" /></svg></span>
-              Skatterådgivning
-            </span>
-            <span class="hero__chip hero__chip--c">
-              <span class="icon-badge icon-badge--warm"><svg class="icon"><use href="#pie" /></svg></span>
-              Verdivurdering
-            </span>
+
+            <div class="hero__layer" style="--depth: 2.2">
+              <div class="hero-task hero-task--a" style="--t: 0">
+                <span class="hero-task__badge"><svg class="icon"><use href="#check" /></svg></span>
+                <span><strong>Mva-melding levert</strong><small>Innen fristen</small></span>
+              </div>
+            </div>
+            <div class="hero__layer" style="--depth: 1.8">
+              <div class="hero-task hero-task--b" style="--t: 1">
+                <span class="hero-task__badge"><svg class="icon"><use href="#check" /></svg></span>
+                <span><strong>A-melding sendt</strong><small>Hver måned</small></span>
+              </div>
+            </div>
+            <div class="hero__layer" style="--depth: 2.6">
+              <div class="hero-task hero-task--c" style="--t: 2">
+                <span class="hero-task__badge hero-task__badge--warm"><svg class="icon"><use href="#calendar" /></svg></span>
+                <span><strong>Skattemelding</strong><small>Frist 31. mai</small></span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -1,16 +1,50 @@
-/* Hero: message + CTAs on the left, logo mark with service chips on the right. */
+/*
+  Hero: message + CTAs on the left, an illustration of the service on the right:
+  an overview card (ring, bars, trend line) with "done on time" task cards around it.
+  No real figures. Everything draws in once; the background glow drifts slowly.
+  Pointer tilt (js/hero.js) sets --px/--py in -1..1; each layer moves by its --depth.
+*/
 
 .hero {
   /* Header total height: the hero extends up behind the transparent resting header (no seam). */
   --header-total: calc(var(--ds-size-header) + var(--ds-size-header-inset));
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   margin-top: calc(-1 * var(--header-total));
   padding-block: calc(var(--ds-space-11) + var(--header-total)) var(--ds-space-12);
+  background: var(--ds-color-bg);
+}
+
+/* Decorative glow (primitives allowed here, see DESIGN.md). Drifts slowly, the only looping motion. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  z-index: -1;
   background:
-    radial-gradient(60% 60% at 85% 20%, var(--ds-primitive-teal-3) 0%, transparent 70%),
-    radial-gradient(40% 40% at 70% 90%, var(--ds-primitive-apricot-3) 0%, transparent 70%),
-    var(--ds-color-bg);
+    radial-gradient(45% 45% at 82% 22%, var(--ds-primitive-teal-3) 0%, transparent 70%),
+    radial-gradient(32% 32% at 68% 88%, var(--ds-primitive-apricot-3) 0%, transparent 70%),
+    radial-gradient(28% 28% at 12% 8%, var(--ds-primitive-apricot-2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero::before {
+    animation: hero-drift var(--ds-duration-ambient) ease-in-out infinite alternate;
+  }
+}
+
+@keyframes hero-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-4%, 3%, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(3%, -2%, 0) scale(1.02);
+  }
 }
 
 .hero__inner {
@@ -54,68 +88,281 @@
   color: var(--ds-color-accent-default);
 }
 
-/* Visual */
+/* ---------- Visual ---------- */
+
 .hero__visual {
+  --px: 0;
+  --py: 0;
   position: relative;
   justify-self: center;
-  width: min(100%, 320px);
-  aspect-ratio: 1;
+  width: min(100%, 440px);
+  padding: var(--ds-space-11) var(--ds-space-5) var(--ds-space-12);
 }
 
-.hero__disc {
+.hero__layer {
+  transform: translate3d(calc(var(--px) * var(--depth) * 6px), calc(var(--py) * var(--depth) * 6px), 0);
+  transition: transform var(--ds-duration-deliberate) var(--ds-easing-enter);
+}
+
+.hero__layer:not(:first-child) {
   position: absolute;
-  inset: 6%;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Overview card */
+.hero-card {
   display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--ds-color-surface-default);
+  gap: var(--ds-space-5);
+  padding: var(--ds-space-7);
+  border-radius: var(--ds-radius-2xl);
+  background: var(--ds-color-surface-raised);
   box-shadow: var(--ds-shadow-lg);
 }
 
-.hero__disc img {
-  width: 62%;
-  height: auto;
+.hero-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-4);
 }
 
-.hero__chip {
+.hero-card__title {
+  font-size: var(--ds-font-label-size);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.hero-card__meta {
+  color: var(--ds-color-text-tertiary);
+  font-size: var(--ds-font-caption-size);
+}
+
+.hero-ring {
+  width: 40px;
+  height: 40px;
+  fill: none;
+  stroke-width: 5;
+}
+
+.hero-ring__track,
+.hero-ring__value {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.hero-ring__check {
+  stroke: var(--ds-color-accent-default);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+}
+
+.hero-ring__track {
+  stroke: var(--ds-color-accent-subtle);
+}
+
+.hero-ring__value {
+  stroke: var(--ds-color-accent-default);
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+}
+
+.hero-chart {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.hero-chart__grid line {
+  stroke: var(--ds-color-border-subtle);
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+}
+
+.hero-chart__bars rect {
+  fill: var(--ds-color-secondary-subtle);
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+.hero-chart__bars rect:last-child {
+  fill: var(--ds-primitive-apricot-6);
+}
+
+.hero-chart__line {
+  fill: none;
+  stroke: var(--ds-color-highlight-default);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+}
+
+.hero-chart__dot {
+  fill: var(--ds-color-highlight-default);
+  stroke: var(--ds-color-surface-raised);
+  stroke-width: 3;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.hero-chart__axis {
+  display: flex;
+  justify-content: space-around;
+  margin-top: calc(-1 * var(--ds-space-3));
+  color: var(--ds-color-text-tertiary);
+  font-size: var(--ds-font-caption-size);
+}
+
+/* Task cards */
+.hero-task {
   position: absolute;
   display: inline-flex;
   align-items: center;
-  gap: var(--ds-space-3);
-  padding: var(--ds-space-3) var(--ds-space-5) var(--ds-space-3) var(--ds-space-3);
+  gap: var(--ds-space-4);
+  padding: var(--ds-space-3) var(--ds-space-6) var(--ds-space-3) var(--ds-space-3);
   border-radius: var(--ds-radius-full);
   background: var(--ds-color-surface-raised);
-  box-shadow: var(--ds-shadow-md);
-  font-size: var(--ds-font-small-size);
-  font-weight: 500;
+  box-shadow: var(--ds-shadow-lg);
   white-space: nowrap;
 }
 
-.hero__chip .icon-badge {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--ds-radius-full);
+.hero-task strong {
+  display: block;
+  font-size: var(--ds-font-small-size);
+  font-weight: 700;
+  line-height: 1.3;
 }
 
-.hero__chip .icon {
+.hero-task small {
+  display: block;
+  color: var(--ds-color-text-tertiary);
+  font-size: var(--ds-font-caption-size);
+  line-height: 1.3;
+}
+
+.hero-task__badge {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-color-accent-default);
+  color: var(--ds-color-text-on-accent);
+}
+
+.hero-task__badge--warm {
+  background: var(--ds-color-secondary-subtle);
+  color: var(--ds-color-secondary-text);
+}
+
+.hero-task__badge .icon {
   width: var(--ds-icon-size-sm);
   height: var(--ds-icon-size-sm);
-  stroke-width: 2.25;
+  stroke-width: 2.5;
 }
 
-.hero__chip--a {
-  top: 8%;
-  left: -2%;
+.hero-task--a {
+  top: var(--ds-space-5);
+  right: 0;
 }
 
-.hero__chip--b {
-  top: 46%;
-  right: -4%;
+.hero-task--b {
+  bottom: var(--ds-space-8);
+  left: 0;
 }
 
-.hero__chip--c {
-  bottom: 6%;
-  left: 6%;
+.hero-task--c {
+  bottom: 0;
+  right: var(--ds-space-5);
+}
+
+/*
+  Draw-in sequence (plays once on load): card enters, ring and bars fill,
+  the trend line draws, the dot lands, then the task cards arrive one by one.
+  Without motion preference everything is simply shown in its final state.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  .hero-ring__value {
+    animation: hero-draw var(--ds-duration-chart) var(--ds-easing-emphasized) 400ms both;
+  }
+
+  .hero-ring__check {
+    animation: hero-draw var(--ds-duration-slow) var(--ds-easing-enter) 1700ms both;
+  }
+
+  .hero-chart__bars rect {
+    animation: hero-bar var(--ds-duration-deliberate) var(--ds-easing-enter) both;
+    animation-delay: calc(450ms + var(--b) * 70ms);
+  }
+
+  .hero-chart__line {
+    animation: hero-draw var(--ds-duration-chart) var(--ds-easing-in-out) 700ms both;
+  }
+
+  .hero-chart__dot {
+    animation: hero-pop var(--ds-motion-spring-smooth-duration) var(--ds-motion-spring-smooth) 2000ms both;
+  }
+
+  .hero-task {
+    animation: hero-task var(--ds-motion-spring-gentle-duration) var(--ds-motion-spring-gentle) both;
+    animation-delay: calc(1300ms + var(--t) * 220ms);
+  }
+
+  .hero-task__badge:not(.hero-task__badge--warm) .icon {
+    stroke-dasharray: 40;
+    animation: hero-stroke var(--ds-duration-slow) var(--ds-easing-enter) both;
+    animation-delay: calc(1550ms + var(--t) * 220ms);
+  }
+}
+
+@keyframes hero-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hero-bar {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes hero-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+@keyframes hero-task {
+  from {
+    opacity: 0;
+    transform: translateY(var(--ds-motion-distance-md)) scale(var(--ds-motion-scale-enter));
+    filter: blur(4px);
+  }
+}
+
+@keyframes hero-stroke {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero__visual {
+    padding-inline: 0;
+  }
+
+  .hero-card {
+    padding: var(--ds-space-6);
+  }
 }
 
 @media (min-width: 960px) {
@@ -128,6 +375,7 @@
   }
 
   .hero__visual {
-    width: min(100%, 420px);
+    width: min(100%, 460px);
+    padding-inline: var(--ds-space-8) var(--ds-space-7);
   }
 }

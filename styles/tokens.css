@@ -211,6 +211,8 @@
   --ds-duration-deliberate: 600ms;
   --ds-duration-morph: 560ms;
   --ds-duration-reveal: 1100ms;
+  --ds-duration-ambient: 28s;
+  --ds-duration-chart: 1400ms;
   --ds-easing-standard: cubic-bezier(0.2, 0, 0, 1);
   --ds-easing-enter: cubic-bezier(0.16, 1, 0.3, 1);
   --ds-easing-exit: cubic-bezier(0.4, 0, 1, 1);
