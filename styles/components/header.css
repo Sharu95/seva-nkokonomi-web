@@ -29,25 +29,37 @@
   border-radius: 0;
   background-color: transparent;
   pointer-events: auto;
-  transition:
-    width var(--ds-duration-slow) var(--ds-easing-emphasized),
-    max-width var(--ds-duration-slow) var(--ds-easing-emphasized),
-    height var(--ds-duration-slow) var(--ds-easing-emphasized),
-    margin var(--ds-duration-slow) var(--ds-easing-emphasized),
-    padding var(--ds-duration-slow) var(--ds-easing-emphasized),
-    border-radius var(--ds-duration-slow) var(--ds-easing-emphasized),
-    border-color var(--ds-duration-base) var(--ds-easing-standard),
-    background-color var(--ds-duration-base) var(--ds-easing-standard),
-    box-shadow var(--ds-duration-base) var(--ds-easing-standard);
+  /* Back to rest: everything morphs together. */
+  transition-property: width, max-width, height, margin, padding, gap, border-radius, border-color, background-color,
+    box-shadow, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: var(--ds-duration-morph);
+  transition-timing-function: var(--ds-easing-in-out);
 }
 
-/* Floating state */
+.site-header__bar > * {
+  flex-shrink: 0;
+}
+
+/*
+  Floating state. Two phases: the shape contracts first (width, height, inset),
+  then the glass surface fades in once the shape has mostly settled.
+  --pill-width is the measured content width (js/header.js); without JS the max width applies.
+*/
 .site-header[data-scrolled] .site-header__bar {
   width: calc(100% - 2 * var(--ds-size-floating-header-offset));
-  max-width: var(--ds-size-floating-header-max-width);
+  max-width: var(--pill-width, var(--ds-size-floating-header-max-width));
   height: var(--ds-size-floating-header-height);
   margin-top: var(--ds-size-floating-header-offset);
   padding-inline: var(--ds-space-6) var(--ds-space-3);
+  gap: var(--ds-space-6);
+  transition-property: width, max-width, height, margin, padding, gap, border-radius, border-color, background-color,
+    box-shadow, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration:
+    var(--ds-duration-morph), var(--ds-duration-morph), var(--ds-duration-morph), var(--ds-duration-morph),
+    var(--ds-duration-morph), var(--ds-duration-morph), var(--ds-duration-base), var(--ds-duration-base),
+    var(--ds-duration-base), var(--ds-duration-base), var(--ds-duration-base), var(--ds-duration-base);
+  transition-delay: 0ms, 0ms, 0ms, 0ms, 0ms, 0ms, var(--ds-duration-quick), var(--ds-duration-quick),
+    var(--ds-duration-quick), var(--ds-duration-quick), var(--ds-duration-quick), var(--ds-duration-quick);
   border-color: var(--ds-material-glass-regular-border);
   border-radius: var(--ds-radius-full);
   background-color: var(--ds-material-glass-regular-fallback);
@@ -79,11 +91,6 @@
 .site-header__logo img {
   height: 34px;
   width: auto;
-  transition: height var(--ds-duration-slow) var(--ds-easing-emphasized);
-}
-
-.site-header[data-scrolled] .site-header__logo img {
-  height: 30px;
 }
 
 .site-nav {
