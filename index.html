@@ -11,11 +11,24 @@
     <meta name="theme-color" content="#fef9f4" />
     <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="canonical" href="https://nkokonomi.no/" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NK Økonomi" />
+    <meta property="og:url" content="https://nkokonomi.no/" />
     <meta property="og:locale" content="nb_NO" />
     <meta property="og:title" content="NK Økonomi – regnskap og økonomisk rådgivning" />
     <meta property="og:description" content="Regnskap og økonomisk rådgivning under ett tak i Hønefoss. Kontakt oss for en uforpliktende samtale." />
+    <meta property="og:image" content="https://nkokonomi.no/assets/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NK Økonomi – Regnskap og rådgivning under ett tak. Hønefoss, nkokonomi.no" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NK Økonomi – regnskap og økonomisk rådgivning" />
+    <meta name="twitter:description" content="Regnskap og økonomisk rådgivning under ett tak i Hønefoss. Kontakt oss for en uforpliktende samtale." />
+    <meta name="twitter:image" content="https://nkokonomi.no/assets/og-image.png" />
+    <meta name="twitter:image:alt" content="NK Økonomi – Regnskap og rådgivning under ett tak. Hønefoss, nkokonomi.no" />
 
     <link rel="preload" href="fonts/manrope-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
     <script>
@@ -27,8 +40,36 @@
       [
         {
           "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://nkokonomi.no/#organization",
+          "name": "NK Økonomi",
+          "url": "https://nkokonomi.no/",
+          "logo": "https://nkokonomi.no/assets/apple-touch-icon.png",
+          "image": "https://nkokonomi.no/assets/og-image.png",
+          "description": "Regnskap og økonomisk rådgivning under ett tak i Hønefoss.",
+          "email": "post@nkokonomi.no",
+          "telephone": "+47 40 55 65 69",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Arnegårdsbakken 3B",
+            "postalCode": "3511",
+            "addressLocality": "Hønefoss",
+            "addressCountry": "NO"
+          },
+          "areaServed": "Ringerike",
+          "subOrganization": [
+            { "@id": "https://nkokonomi.no/#nk-regnskap" },
+            { "@id": "https://nkokonomi.no/#nk-okonomi-bistand" }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
           "@type": "AccountingService",
+          "@id": "https://nkokonomi.no/#nk-regnskap",
           "name": "NK Regnskap AS",
+          "url": "https://nkokonomi.no/",
+          "image": "https://nkokonomi.no/assets/og-image.png",
+          "parentOrganization": { "@id": "https://nkokonomi.no/#organization" },
           "taxID": "937920326",
           "description": "Godkjent regnskapsselskap (Finanstilsynet).",
           "email": "post@nkokonomi.no",
@@ -45,7 +86,11 @@
         {
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
+          "@id": "https://nkokonomi.no/#nk-okonomi-bistand",
           "name": "NK Økonomi Bistand AS",
+          "url": "https://nkokonomi.no/",
+          "image": "https://nkokonomi.no/assets/og-image.png",
+          "parentOrganization": { "@id": "https://nkokonomi.no/#organization" },
           "taxID": "922859469",
           "foundingDate": "2019-05-11",
           "description": "Skatterådgivning, verdivurdering av virksomheter, fisjon og fusjon, CFO-outsourcing.",
