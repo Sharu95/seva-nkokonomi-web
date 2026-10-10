@@ -34,6 +34,7 @@
 .button .icon {
   width: var(--ds-icon-size-md);
   height: var(--ds-icon-size-md);
+  transition: transform var(--ds-motion-spring-smooth-duration) var(--ds-motion-spring-smooth);
 }
 
 .button--primary {
@@ -60,6 +61,11 @@
   .button--primary:hover {
     background: var(--ds-color-accent-hover);
     color: var(--ds-color-text-on-accent);
+  }
+
+  /* A trailing icon (arrow) nudges forward on hover. */
+  .button:hover > .icon:last-child:not(:first-child) {
+    transform: translateX(var(--ds-motion-distance-sm));
   }
 
   .button--secondary:hover {

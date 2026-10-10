@@ -10,6 +10,7 @@
 
 .step {
   display: grid;
+  align-content: start;
   gap: var(--ds-space-3);
   counter-increment: step;
 }
@@ -70,5 +71,39 @@
     right: calc(-1 * var(--ds-space-7) + 16px);
     height: 1px;
     background: var(--ds-color-border-default);
+    transform-origin: left center;
+  }
+
+  /* The connectors draw left to right as the steps scroll into view (scroll-driven, no JS).
+     Browsers without scroll timelines show the finished line. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .steps {
+        view-timeline: --steps block;
+      }
+
+      .step:not(:last-child)::after {
+        animation: step-connect linear both;
+        animation-timeline: --steps;
+      }
+
+      .step:nth-child(1)::after {
+        animation-range: cover 14% cover 26%;
+      }
+
+      .step:nth-child(2)::after {
+        animation-range: cover 22% cover 34%;
+      }
+
+      .step:nth-child(3)::after {
+        animation-range: cover 30% cover 42%;
+      }
+    }
+  }
+}
+
+@keyframes step-connect {
+  from {
+    transform: scaleX(0);
   }
 }
