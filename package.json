@@ -1,0 +1,12 @@
+{
+  "name": "nkokonomi-web",
+  "private": true,
+  "type": "module",
+  "description": "Landing site for NK \u00d8konomi Bistand AS. Static HTML/CSS.",
+  "scripts": {
+    "tokens": "node scripts/build-tokens.mjs",
+    "palette": "node scripts/derive-palette.mjs",
+    "dev": "python3 -m http.server 4321",
+    "icons": "node scripts/inline-icons.mjs"
+  }
+}
