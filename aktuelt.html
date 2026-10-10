@@ -82,23 +82,28 @@
           <a href="https://www.skatteetaten.no/person/skatt/skattekalender/" rel="noopener">skattekalender for person<svg class="icon" aria-hidden="true"><use href="#external" /></svg></a>.
         </p>
 
-        <section class="aktuelt__group" aria-labelledby="frister-bedrift-title" data-deadlines="bedrift" hidden>
-          <h2 id="frister-bedrift-title" class="t-heading-md">Frister for bedrift</h2>
+        <!-- Filters (js/aktuelt.js). Shown once data has loaded; the URL keeps the choice (?vis=…&for=…). -->
+        <div class="aktuelt__filters" data-filters hidden>
+          <div class="pill-filter" role="group" aria-label="Vis" data-filter="vis">
+            <button type="button" class="pill-filter__option" data-value="frister" aria-pressed="true">Frister</button>
+            <button type="button" class="pill-filter__option" data-value="a-ordningen" aria-pressed="false">A-ordningen</button>
+          </div>
+          <div class="pill-filter" role="group" aria-label="Frister for" data-filter="for">
+            <button type="button" class="pill-filter__option" data-value="bedrift" aria-pressed="true">Bedrift</button>
+            <button type="button" class="pill-filter__option" data-value="person" aria-pressed="false">Person</button>
+          </div>
+        </div>
+        <p class="visually-hidden" aria-live="polite" data-status></p>
+
+        <section class="aktuelt__panel" aria-labelledby="frister-title" data-panel="frister" hidden>
+          <h2 id="frister-title" class="t-heading-md" data-frister-heading>Frister for bedrift</h2>
           <div data-deadlines-list></div>
-          <a class="aktuelt__more" href="https://www.skatteetaten.no/bedrift-og-organisasjon/starte-og-drive/frister-gebyrer-og-tilleggsskatt/frister-og-oppgaver/" rel="noopener">
+          <a class="aktuelt__more" href="https://www.skatteetaten.no/bedrift-og-organisasjon/starte-og-drive/frister-gebyrer-og-tilleggsskatt/frister-og-oppgaver/" rel="noopener" data-calendar-link>
             Se hele kalenderen hos Skatteetaten<svg class="icon" aria-hidden="true"><use href="#external" /></svg>
           </a>
         </section>
 
-        <section class="aktuelt__group" aria-labelledby="frister-person-title" data-deadlines="person" hidden>
-          <h2 id="frister-person-title" class="t-heading-md">Frister for person</h2>
-          <div data-deadlines-list></div>
-          <a class="aktuelt__more" href="https://www.skatteetaten.no/person/skatt/skattekalender/" rel="noopener">
-            Se hele kalenderen hos Skatteetaten<svg class="icon" aria-hidden="true"><use href="#external" /></svg>
-          </a>
-        </section>
-
-        <section class="aktuelt__group" aria-labelledby="a-ordningen-title" data-news hidden>
+        <section class="aktuelt__panel" aria-labelledby="a-ordningen-title" data-panel="a-ordningen" hidden>
           <h2 id="a-ordningen-title" class="t-heading-md">Nytt fra a-ordningen</h2>
           <ul class="news-list" data-news-list></ul>
         </section>

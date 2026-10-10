@@ -137,6 +137,7 @@ Sections (`styles/sections/`): hero, frister, aktuelt, steps, about, contact, pr
 **Frister and Aktuelt (feed content).** Deadlines and a-ordningen news come from Skatteetaten's RSS feeds, fetched daily by CI into `data/*.json` (Skatteetaten blocks cross-origin requests). Rules:
 - Ships hidden, shown only with data. Missing data or a failed request means no strip on the front page; on `aktuelt.html` a link to Skatteetaten's calendars is shown instead. Nothing ever breaks.
 - Past deadlines are filtered out in the browser (Norwegian date), so stale data never shows an expired date. A filter needs at least 2 upcoming deadlines to be offered; Bedrift is the default.
+- `aktuelt.html` has two pill filters on top: **Vis** (Frister | A-ordningen, default Frister) and **For** (Bedrift | Person, default Bedrift, shown only for Frister). Options without content are hidden; a filter with one option is hidden. The choice lives in the URL (`?vis=a-ordningen`, `?for=person`); the front page's "Se alle frister" opens the same filter. Deadlines there are rows (`.deadline--row`, no audience pill) grouped by month. Skatteetaten's deadline feed has no description, so deadlines show the title only; news shows its summary.
 - Static: the front-page row is a grid on wide screens and a swipe row with snap points below 1100px. No auto-scrolling (calm motion, WCAG 2.2.2). It fades in once.
 - Feed text is inserted as text only, never as HTML. Always credit Skatteetaten and say these are general deadlines.
 

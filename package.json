@@ -6,7 +6,7 @@
   "scripts": {
     "tokens": "node scripts/build-tokens.mjs",
     "palette": "node scripts/derive-palette.mjs",
-    "dev": "python3 -m http.server 4321",
+    "dev": "python3 scripts/dev_server.py 4321",
     "icons": "node scripts/inline-icons.mjs",
     "og": "node scripts/build-og-image.mjs",
     "feeds": "python3 scripts/fetch_feeds.py"

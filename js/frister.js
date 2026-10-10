@@ -24,11 +24,14 @@ function render(items) {
   const list = root.querySelector("[data-frister-list]");
   const filter = root.querySelector("[data-frister-filter]");
   const source = root.querySelector("[data-frister-source]");
+  const all = root.querySelector("[data-frister-all]");
 
   const show = (audience) => {
     list.replaceChildren(...byAudience[audience].slice(0, SHOWN).map((d) => el("li", {}, deadlineCard(d, today))));
     list.scrollLeft = 0;
     source.href = CALENDAR_URL[audience];
+    // Open aktuelt.html on the same filter (Bedrift is its default, so no parameter needed).
+    all.href = audience === "bedrift" ? "aktuelt.html" : `aktuelt.html?for=${audience}`;
     for (const button of filter.querySelectorAll("button")) {
       button.setAttribute("aria-pressed", String(button.dataset.audience === audience));
     }

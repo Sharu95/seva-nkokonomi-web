@@ -4,9 +4,9 @@ Landing site for **NK Økonomi**, the umbrella brand for NK Regnskap AS (account
 
 ## Run locally
 ```sh
-npm run dev        # python3 -m http.server 4321 → http://localhost:4321
+npm run dev        # scripts/dev_server.py (no caching) → http://localhost:4321
 ```
-Pages also work straight from disk (`file://`): icons are inlined in each page.
+Pages render straight from disk (`file://`) too, since icons are inlined in each page, but the deadline strip and `aktuelt.html` content need a server: browsers block module scripts and `fetch()` of `data/*.json` on `file://`. Use `npm run dev`; it also disables caching, so you never see stale files.
 
 ## Structure
 ```

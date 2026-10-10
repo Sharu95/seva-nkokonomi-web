@@ -42,16 +42,25 @@
 }
 
 .aktuelt__fallback[hidden],
-.aktuelt__group[hidden],
+.aktuelt__filters[hidden],
+.aktuelt__panel[hidden],
 .aktuelt__source[hidden] {
   display: none;
 }
 
-.aktuelt__group + .aktuelt__group {
-  margin-top: var(--ds-space-11);
+/* Two pill groups: what to show, then whose deadlines. Wrap onto two lines on narrow screens. */
+.aktuelt__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-4) var(--ds-space-6);
+  margin-bottom: var(--ds-space-9);
 }
 
-.aktuelt__group > h2 {
+.aktuelt__panel {
+  max-width: 52rem;
+}
+
+.aktuelt__panel > h2 {
   margin-bottom: var(--ds-space-7);
 }
 
@@ -73,10 +82,9 @@
   font-size: var(--ds-font-caption-size);
 }
 
-.deadline-grid {
+.deadline-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-  gap: var(--ds-space-4);
+  gap: var(--ds-space-3);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -86,7 +94,6 @@
   display: grid;
   margin: 0;
   padding: 0;
-  max-width: var(--ds-size-prose);
   list-style: none;
 }
 

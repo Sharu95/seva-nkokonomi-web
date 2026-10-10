@@ -66,11 +66,16 @@ export function el(tag, attrs = {}, ...children) {
   return node;
 }
 
-/** A deadline card: date block, title, relative time and audience pill. Used on both pages. */
-export function deadlineCard(deadline, today) {
+/**
+ * A deadline as a link: date block, title, relative time and (optionally) the audience pill.
+ * "card" for the front-page row; "row" for the full list on aktuelt.html, where the active
+ * filter already says the audience, so the pill is left out.
+ */
+export function deadlineCard(deadline, today, { variant = "card" } = {}) {
+  const showAudience = variant === "card";
   return el(
     "a",
-    { class: "deadline", href: deadline.url, rel: "noopener" },
+    { class: `deadline deadline--${variant}`, href: deadline.url, rel: "noopener" },
     el(
       "time",
       { class: "deadline__date", datetime: deadline.date, "aria-label": longDate(deadline.date) },
@@ -84,7 +89,7 @@ export function deadlineCard(deadline, today) {
       el(
         "span",
         { class: "deadline__meta" },
-        el("span", { class: `pill pill--${deadline.audience}` }, AUDIENCE_LABEL[deadline.audience] ?? deadline.audience),
+        showAudience && el("span", { class: `pill pill--${deadline.audience}` }, AUDIENCE_LABEL[deadline.audience] ?? deadline.audience),
         el("span", {}, relativeDay(deadline.date, today)),
       ),
     ),
