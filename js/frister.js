@@ -46,4 +46,6 @@ function render(items) {
 
   show(audiences[0]); // AUDIENCE_LABEL order puts Bedrift first
   root.hidden = false;
+  // The section didn't exist for the browser's own jump on load, so honour a #frister link now.
+  if (location.hash === `#${root.id}`) root.scrollIntoView({ behavior: "instant" });
 }

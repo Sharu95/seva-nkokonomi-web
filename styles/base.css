@@ -205,6 +205,11 @@ a {
   }
 }
 
+/* Smaller supporting sections (e.g. Kommende frister): about half the usual spacing. */
+.section.section--compact {
+  padding-block: var(--ds-space-11);
+}
+
 .section-head {
   display: grid;
   gap: var(--ds-space-stack-sm);

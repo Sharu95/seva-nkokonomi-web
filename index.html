@@ -192,27 +192,6 @@
     <main id="innhold">
       <!-- Hero -->
       <section class="hero" aria-labelledby="hero-title">
-        <!-- Upcoming tax deadlines (js/frister.js). Ships hidden; shown only when there is data. -->
-        <div class="container">
-          <aside class="frister" aria-labelledby="frister-title" data-frister hidden>
-            <div class="frister__head">
-              <p id="frister-title" class="frister__title">
-                <svg class="icon" aria-hidden="true"><use href="#calendar" /></svg>Kommende frister
-              </p>
-              <div class="pill-filter" role="group" aria-label="Vis frister for" data-frister-filter>
-                <button type="button" class="pill-filter__option" data-audience="bedrift" aria-pressed="true">Bedrift</button>
-                <button type="button" class="pill-filter__option" data-audience="person" aria-pressed="false">Person</button>
-              </div>
-              <a class="frister__all" href="aktuelt.html" data-frister-all>
-                Se alle frister<svg class="icon" aria-hidden="true"><use href="#arrow-right" /></svg>
-              </a>
-            </div>
-            <ol class="frister__list" data-frister-list></ol>
-            <p class="frister__source">
-              Kilde: <a href="https://www.skatteetaten.no/bedrift-og-organisasjon/starte-og-drive/frister-gebyrer-og-tilleggsskatt/frister-og-oppgaver/" rel="noopener" data-frister-source>Skatteetaten</a>. Generelle frister, spør oss om hva som gjelder for deg.
-            </p>
-          </aside>
-        </div>
         <div class="container hero__inner">
           <div class="hero__content">
             <p class="t-eyebrow enter" style="--i: 0"><svg class="icon" aria-hidden="true"><use href="#pin" /></svg>Regnskap og rådgivning i Hønefoss</p>
@@ -387,6 +366,29 @@
               <p>En økonomisjef på deltid: budsjett, rapportering og beslutningsstøtte, uten at du må ansette.</p>
             </li>
           </ul>
+        </div>
+      </section>
+
+      <!-- Upcoming tax deadlines (js/frister.js). Ships hidden; shown only when there is data. -->
+      <section id="frister" class="section section--compact section--tint frister" aria-labelledby="frister-title" data-frister hidden>
+        <div class="container">
+          <div class="frister__head">
+            <div class="frister__intro">
+              <p class="t-eyebrow"><svg class="icon" aria-hidden="true"><use href="#calendar" /></svg>Skattekalenderen</p>
+              <h2 id="frister-title" class="t-heading-md">Kommende frister</h2>
+            </div>
+            <div class="pill-filter" role="group" aria-label="Vis frister for" data-frister-filter>
+              <button type="button" class="pill-filter__option" data-audience="bedrift" aria-pressed="true">Bedrift</button>
+              <button type="button" class="pill-filter__option" data-audience="person" aria-pressed="false">Person</button>
+            </div>
+            <a class="frister__all" href="aktuelt.html" data-frister-all>
+              Se alle frister<svg class="icon" aria-hidden="true"><use href="#arrow-right" /></svg>
+            </a>
+          </div>
+          <ol class="frister__list" data-frister-list></ol>
+          <p class="frister__source">
+            Kilde: <a href="https://www.skatteetaten.no/bedrift-og-organisasjon/starte-og-drive/frister-gebyrer-og-tilleggsskatt/frister-og-oppgaver/" rel="noopener" data-frister-source>Skatteetaten</a>. Generelle frister, spør oss om hva som gjelder for deg.
+          </p>
         </div>
       </section>
 

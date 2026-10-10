@@ -1,57 +1,31 @@
 /*
-  "Kommende frister" strip at the top of the hero (js/frister.js). Static row of deadline cards:
-  a grid on wide screens, a sideways swipe with snap points on narrow ones. Nothing moves on its own.
-  Hidden until there is data; it then fades in once.
+  "Kommende frister": a compact section after Rådgivning (js/frister.js). Static row of deadline
+  cards: a grid on wide screens, a sideways swipe with snap points on narrow ones. Nothing moves on
+  its own. Hidden until there is data. It sits below the fold, so it simply appears (no fade).
 */
-
-.frister {
-  display: grid;
-  /* minmax(0, …): the scrolling list must not widen the track (and the page) to fit all cards. */
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--ds-space-5);
-  margin-bottom: var(--ds-space-10);
-}
 
 .frister[hidden] {
   display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .frister {
-    animation: frister-in var(--ds-duration-reveal) var(--ds-easing-enter) both;
-  }
+.frister > .container {
+  display: grid;
+  /* minmax(0, …): the scrolling list must not widen the track (and the page) to fit all cards. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--ds-space-6);
 }
 
-@keyframes frister-in {
-  from {
-    opacity: 0;
-    transform: translateY(var(--ds-space-3));
-  }
-}
-
+/* Heading, filter and "see all" on one line on wide screens; filter and link wrap below on narrow. */
 .frister__head {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: var(--ds-space-4) var(--ds-space-6);
+  align-items: flex-end;
+  gap: var(--ds-space-4) var(--ds-space-7);
 }
 
-.frister__title {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--ds-space-3);
-  margin: 0;
-  font-family: var(--ds-font-eyebrow-family);
-  font-size: var(--ds-font-eyebrow-size);
-  font-weight: var(--ds-font-eyebrow-weight);
-  letter-spacing: var(--ds-font-eyebrow-tracking);
-  color: var(--ds-color-text-primary);
-}
-
-.frister__title .icon {
-  width: var(--ds-icon-size-md);
-  height: var(--ds-icon-size-md);
-  color: var(--ds-color-accent-default);
+.frister__intro {
+  display: grid;
+  gap: var(--ds-space-2);
 }
 
 .frister__all {

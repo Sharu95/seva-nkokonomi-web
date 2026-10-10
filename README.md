@@ -10,7 +10,7 @@ Pages render straight from disk (`file://`) too, since icons are inlined in each
 
 ## Structure
 ```
-index.html            One-page site: hero (with "Kommende frister"), #regnskap, #radgivning, process, about, contact
+index.html            One-page site: hero, #regnskap, #radgivning, #frister (Kommende frister), process, about, contact
 aktuelt.html          All upcoming tax deadlines and a-ordningen news (rendered from data/*.json)
 personvern.html       Privacy policy (draft, review before publishing)
 data/                 frister.json, a-ordningen.json: Skatteetaten feeds as JSON (updated daily by CI)
