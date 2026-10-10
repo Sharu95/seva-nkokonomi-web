@@ -1,0 +1,146 @@
+{
+  "updated": "2026-10-10T20:03:50+00:00",
+  "source": "Skatteetaten",
+  "items": [
+    {
+      "title": "Husk å rapportere siste dato for endring av stillingsprosent",
+      "summary": "Vi ser at enkelte opplysningspliktige ikke rapporterer siste dato for endring av stillingsprosent. Opplysningen er obligatorisk og skal rapporteres både for ordinære og maritime arbeidsforhold.",
+      "date": "2026-10-05T12:07:00+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/husk-a-rapportere-siste-dato-for-endring-av-stillingsprosent/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Nye tilgangspakker for a-meldingen (oppdatert)",
+      "summary": "De gamle Altinn-rollene er erstattet av tilgangspakker. Hvis du eller din bedrift sender a-melding, bør du sjekke at dere har de nødvendige tilgangene. Fra 17. november vil det ikke lenger være mulig å sende inn med gamle Altinn-roller.",
+      "date": "2026-09-30T22:00:00+00:00",
+      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/nye-tilgangspakker-for-a-meldingen/",
+      "source": "arbeidsgiver"
+    },
+    {
+      "title": "Ny versjon av avstemmingsrapport-API",
+      "summary": "",
+      "date": "2026-09-11T10:09:46+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/ny-versjon-av-avstemmingsrapport-api/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Vi tilbyr deling av informasjon om leveranser i ny og gammel API",
+      "summary": "For å støtte sluttbrukersystemene i overgangen til Altinn 3.0 (som har frist 31.05.26), tilbyr Skatteetaten nå deling av nøkkelinformasjon om leveranser i 2026. Informasjonen kan brukes av alle sluttbrukersystemer som ønsker innsikt i hvordan deres kundebase fordeler seg mellom ny og gammel API.",
+      "date": "2026-08-11T08:07:00+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/vi-tilbyr-deling-av-informasjon-om-leveranser-i-ny-og-gammel-api--/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "NUF-roller knyttes mot tilgangspakker i nye Altinn",
+      "summary": "I forbindelse med overgangen fra roller til tilgangspakker har man nå kommet frem til en løsning på utfordringen med å gi tilgang til NUF for de som kun har kontaktperson, representant eller forretningsfører i Norge.",
+      "date": "2026-06-19T10:31:43+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/nuf-roller-knyttes-mot-tilgangspakker-i-nye-altinn/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Spørsmål og svar - Informasjonsmøtet 18.06",
+      "summary": "",
+      "date": "2026-06-18T12:53:00+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/sporsmal-og-svar---informasjonsmotet-18.06/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Presentasjoner til informasjonsmøtet 18. juni",
+      "summary": "Her finner dere presentasjonen til informasjonsmøtet om a-ordningen som avholdes 18. juni",
+      "date": "2026-06-17T12:02:18+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/presentasjoner-til-informasjonsmotet-18.-juni/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "A-ordningen - informasjonsmøte, 18. juni",
+      "summary": "Vi inviterer til nytt informasjonsmøte torsdag 18. juni kl. 09:00 – 10:00",
+      "date": "2026-06-12T12:48:37+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/a-ordningen---informasjonsmote-18.-juni/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Viktig informasjon: Altinn II stenges 15. juni",
+      "summary": "Mandag 15. juni stenges a-ordningen sine tjenester i Altinn II. Fra denne datoen må alle levere a-meldingen via nye løsninger.",
+      "date": "2026-06-11T12:07:18+00:00",
+      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/altinn-ii-stenges-15.-juni/",
+      "source": "arbeidsgiver"
+    },
+    {
+      "title": "Hvordan oppgi feriepenger i a-meldingen",
+      "summary": "Du skal oppgi beløpet som utbetales fullt ut som feriepenger, uavhengig av hvordan beløpet beregnes (om det er prosentsats eller som et tillegg til ordinær fastlønn).",
+      "date": "2026-06-08T09:51:00+00:00",
+      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/hvordan-oppgi-feriepenger-i-a-meldingen/",
+      "source": "arbeidsgiver"
+    },
+    {
+      "title": "Viktig: Husk å delegere nye tilgangspakker for a-meldingen",
+      "summary": "Vi minner om at virksomheter må ta i bruk de nye tilgangspakkene for a‑meldingen.",
+      "date": "2026-06-08T09:50:16+00:00",
+      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/viktig-husk-a-delegere-nye-tilgangspakker-for-a-meldingen/",
+      "source": "arbeidsgiver"
+    },
+    {
+      "title": "Feil med JSON for tilbakemelding - a-meldingen",
+      "summary": "Vi har oppdaget en feil med JSON for tilbakemelding.",
+      "date": "2026-06-05T06:13:55+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/feil-med-json-for-tilbakemelding---a-meldingen/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Viktig: Sikre støtte for manuell innsending av a‑melding via XML i overgangsperioden",
+      "summary": "Tjenesten for innsending av a-melding som filvedlegg er nå tilgjengelig i produksjon. Med løsningen kan virksomheter laste opp én XML-fil per innsending, forutsatt at filen følger gjeldende spesifikasjoner.",
+      "date": "2026-06-04T11:23:34+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/viktig-sikre-stotte-for-manuell-innsending-av-amelding-via-xml-i-overgangsperioden/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Avstemmingsrapport-API er nå tilgjengelig i produksjon",
+      "summary": "",
+      "date": "2026-06-03T13:05:26+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/avstemmingsrapport-api-er-na-tilgjengelig-i-produksjon/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Endring i forsendelsen (transmission-en) i Dialogporten i produksjon",
+      "summary": "Vi endret i forrige uke til at forsendelsen (transmission-en) i Dialogporten fikk to URL-er i testmiljøet.",
+      "date": "2026-05-29T13:05:55+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/endring-i-forsendelsen-transmission-en-i-dialogporten-i-produksjon/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Avstemmingsrapport-API er nå tilgjengelig i testmiljøet",
+      "summary": "",
+      "date": "2026-05-28T10:21:06+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/avstemmingsrapport-api-er-na-tilgjengelig-i-testmiljoet/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Oppdatert grunnbeløp i folketrygden fra 1. mai 2026",
+      "summary": "Nytt grunnbeløp (G) gjelder fra 1. mai 2026. Arbeidsgivere bør nå gjennomgå hvordan endringen påvirker rapporteringen i a-meldingen for mai med innleveringsfrist 5. juni.",
+      "date": "2026-05-27T10:57:15+00:00",
+      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/oppdatert-grunnbelop-i-folketrygden-fra-1.-mai-2026/",
+      "source": "arbeidsgiver"
+    },
+    {
+      "title": "Endring i forsendelsen (transmission-en) i Dialogporten",
+      "summary": "I testmiljøet har nå forsendelsen (transmission-en) i Dialogporten to URL-er.",
+      "date": "2026-05-22T13:30:14+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/endring-i-forsendelsen-transmission-en-i-dialogporten/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Rapportering av arbeidsforhold i a-meldingen ved streik og liknende fravær",
+      "summary": "Feil rapportering i a-meldingen kan få direkte konsekvenser for ansattes rettigheter hos Nav. En vanlig misforståelse er at arbeidsgiver avslutter arbeidsforhold ved streik og permittering, selv om arbeidsforholdet fortsatt består.",
+      "date": "2026-05-22T11:40:56+00:00",
+      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/rapportering-av-arbeidsforhold-i-a-meldingen-ved-streik-og-liknende-fravar/",
+      "source": "arbeidsgiver"
+    },
+    {
+      "title": "Alternativ løsning for å hente skattekort til arbeidsgiver - vedleggsløsning",
+      "summary": "For å sikre en smidig overgang til nye Altinn, har Skatteetaten besluttet å tilby en alternativ løsning for å hente skattekort til arbeidsgiver.",
+      "date": "2026-05-22T07:59:45+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/alternativ-losning-for-a-hente-skattekort-til-arbeidsgiver/",
+      "source": "systemleverandor"
+    }
+  ]
+}
