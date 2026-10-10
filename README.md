@@ -1,6 +1,6 @@
 # nkokonomi-web
 
-Landing site for **NK Økonomi**, the umbrella brand for NK Regnskap AS (accounting, org.nr. 937 920 326) and NK Økonomi Bistand AS (advisory, org.nr. 922 859 469), Hønefoss. Static HTML and CSS, no build step for the pages, no form. Two small progressive scripts: floating header and scroll reveals.
+Landing site for **NK Økonomi**, the umbrella brand for NK Regnskap AS (accounting, org.nr. 937 920 326) and NK Økonomi Bistand AS (advisory, org.nr. 922 859 469), Hønefoss. Static HTML and CSS, no build step for the pages, no form. Small progressive scripts: floating header, active-section nav, scroll reveals and hero tilt.
 
 ## Run locally
 ```sh
@@ -21,11 +21,14 @@ styles/
   components/         One file per component (badge, button, card, header, footer, icon;
                       form.css is kept for the coming form but not imported)
   sections/           Page sections (hero, steps, about, contact, prose)
-assets/               Logo variants (logo-nk-okonomi.svg = umbrella lockup, pending approval;
+assets/               Logo variants (logo-nk-okonomi-manrope.svg = umbrella lockup in use, Manrope wordmark;
+                      logo-nk-okonomi.svg = same lockup with the Unbounded wordmark; both pending approval;
                       logo-horizontal.svg = NK Økonomi Bistand lockup), icon sprite, touch icon
-fonts/                Self-hosted Unbounded + Geist (OFL-1.1)
+fonts/                Self-hosted Manrope variable font (OFL-1.1)
 js/header.js          Floating header on scroll (progressive: the page works without it)
 js/reveal.js          Scroll-enter reveals: letter blur on headings, fade-up groups (skipped for reduced motion)
+js/nav.js             Active-section pill in the desktop nav
+js/hero.js            Pointer tilt for the hero illustration (fine pointers, no reduced motion)
 scripts/
   build-tokens.mjs    tokens.json → styles/tokens.css
   inline-icons.mjs    assets/icons.svg → inline sprite in each page (npm run icons)
@@ -39,7 +42,7 @@ Icons come from `assets/icons.svg` (source). In pages, write `<svg class="icon" 
 Edit `tokens.json`, then run `npm run tokens`. CSS variables are named `--ds-` + the token path (`color.text.secondary` → `--ds-color-text-secondary`).
 
 ## Before going live
-- [ ] Approve the "NK Økonomi" logo lockup (`assets/logo-nk-okonomi.svg`).
+- [ ] Approve the "NK Økonomi" logo lockup: Manrope wordmark (`assets/logo-nk-okonomi-manrope.svg`, in use) or the original Unbounded wordmark (`assets/logo-nk-okonomi.svg`). Switching back is a src change in the headers and footer.
 - [ ] Review service descriptions and the privacy policy with the customer.
 - [ ] Confirm scope and licences for auditing (revisjon) and investment advice before adding them.
 - [ ] Contact form: decide on a solution (static sites need a form service or host feature).

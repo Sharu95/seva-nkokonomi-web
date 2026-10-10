@@ -11,7 +11,7 @@ The single source of truth for values is `tokens.json`. This file holds the inte
 | Secondary | Apricot `#F0A060` (warm surfaces): **advisory** | Between the logo's amber and orange |
 | Highlight | Orange `#F97316` (amber `#FBBF24`) | Logo bars and trend line |
 | Neutral | Sand (warm), cream background, warm ink text `#1E1A15` | Warmth requested ("too cold"), option B |
-| Fonts | Unbounded (display), Geist (UI/body) | Logo wordmark (Unbounded 600 + Geist 500) |
+| Fonts | Manrope (display, UI and body) | Chosen for warmth and clear figures. The site lockup uses an outlined Manrope 800 wordmark (`logo-nk-okonomi-manrope.svg`); the original logo (`logo.svg`) keeps Unbounded. Pending the client's choice. |
 | Density | Spacious | Landing page, calm reading |
 | Materials | Glass for the sticky header only | |
 | Platforms | Web (static now, React later) | |
@@ -28,8 +28,8 @@ The logo tells the same story: the ring (teal) is order and control, the bars an
 **Dials**
 | Dial | Position | In practice |
 |---|---|---|
-| Energy | Low (calm) | Default spring `smooth`, bounce 0, durations one step slower than the preset. No bouncy motion. |
-| Softness | Middle-high | Radius preset, but pill buttons and round shapes, echoing the logo ring and Unbounded's round forms. |
+| Energy | Low-middle (calm, alive) | Default spring `smooth`, bounce 0. No bouncy motion. One slow ambient drift in the hero; everything else plays once or responds to the user. |
+| Softness | Middle-high | Radius preset, but pill buttons and round shapes, echoing the logo ring. |
 | Depth | Low-middle | Hairline + soft shadows. Glass only on the header. |
 | Density | Spacious | Larger body (17px), 48px controls, 128px section spacing on desktop. |
 | Contrast | Middle | Teal on key actions and the accounting area. Apricot as soft surfaces for the advisory area. Orange is a small spark (step numbers), never a surface. |
@@ -38,7 +38,7 @@ The logo tells the same story: the ring (teal) is order and control, the bars an
 1. **Trust before flair.** Clear text, honest claims, visible company info (org.nr.). No fake numbers or testimonials.
 2. **One action per view.** "Kontakt oss" (teal, primary) is the only strong call to action. Phone is the secondary action.
 3. **Plain language.** Short sentences, no jargon. Norwegian Bokmål first.
-4. **Calm motion.** Content arrives softly once; nothing loops or demands attention.
+4. **Calm motion.** Content arrives softly once and responds to the user. The only loop is the slow hero glow drift (`duration.ambient`), off for reduced motion. Nothing blinks or demands attention.
 5. **Accessible by default.** WCAG 2.2 AA: contrast, focus, keyboard, reduced motion, 44px hit targets.
 
 ## 3. Foundations
@@ -72,19 +72,19 @@ Rules:
 ### Typography
 | Role | Font | Size / LH / tracking | Weight |
 |---|---|---|---|
-| display | Unbounded | 52 / 1.08 / −0.03em (mobile 34) | 600 |
-| heading.lg | Unbounded | 34 / 1.15 / −0.02em (mobile 24) | 500 |
-| heading.md | Unbounded | 24 / 1.25 / −0.01em | 500 |
-| heading.sm | Unbounded | 18 / 1.35 / −0.005em | 500 |
-| lead | Geist | 20 / 1.55 (mobile 17) | 400 |
-| body | Geist | 17 / 1.6 | 400 |
-| label | Geist | 15 / 1.4 | 500–600 |
-| small / caption | Geist | 14 / 13 | 400–500 |
-| eyebrow | Geist | 13 / 0.08em, uppercase | 600 |
+| display | Manrope | 60 / 1.04 / −0.04em (mobile 40 / 1.08) | 800 |
+| heading.lg | Manrope | 40 / 1.12 / −0.03em (mobile 26) | 700 |
+| heading.md | Manrope | 26 / 1.2 / −0.02em | 700 |
+| heading.sm | Manrope | 19 / 1.3 / −0.015em | 700 |
+| lead | Manrope | 20 / 1.55 / −0.01em (mobile 17) | 450 |
+| body | Manrope | 17 / 1.6 | 450 |
+| label | Manrope | 15 / 1.4 | 600 |
+| small / caption | Manrope | 14 / 13 | 400–500 |
+| eyebrow | Manrope | 13 / 0.09em, uppercase | 700 |
 
-Tuning: Unbounded is very wide, so headings are one step smaller than the preset and use weight 500 (600 only for the display). Geist body is 17px for comfortable reading. Numbers that align use `.t-tabular`.
+Tuning: one family for everything; hierarchy comes from weight (800/700 headings, 450 body) and tight tracking on large sizes. Body uses 450 because Manrope's 400 reads a little light on the cream background. Numbers that align use `.t-tabular`.
 
-Fonts are self-hosted variable woff2 (latin subset, covers æ ø å), `font-display: swap`, with metric-adjusted Arial fallbacks (approximate). **Tamil (planned):** neither font has Tamil glyphs. Add Noto Sans Tamil, raise line height (~1.7) and use 0 tracking for `lang="ta"`.
+Manrope is self-hosted as a variable woff2 (latin subset, covers æ ø å, weights 200–800), `font-display: swap`, with a metric-adjusted Arial fallback (approximate). Not loaded from the Google Fonts CDN, so no visitor data goes to Google. **Tamil (planned):** Manrope has no Tamil glyphs. Add Noto Sans Tamil, raise line height (~1.7) and use 0 tracking for `lang="ta"`.
 
 ### Space, size, radius
 4px base scale (`space.0–14`). Semantic: `inset.xs–lg` 12/16/24/32, `stack.xs–xl` 8/12/24/40/64, `section` 128 (mobile 80), `gutter` 20. Content max width 1160px, prose 64ch. Radius preset (4–32, full). Nested rule: outer = inner + padding. Buttons are pills, cards `xl` (24), inputs `md` (12).
@@ -108,9 +108,14 @@ Fonts are self-hosted variable woff2 (latin subset, covers æ ø å), `font-disp
   - Eyebrows: settle from `motion.distance.sm` above and `motion.scale.enter`.
   - Text, cards, steps (`data-reveal="up"`, `data-reveal-group`): fade up `motion.distance.lg`, `motion.staggerGroup` between items.
   - Hidden states apply only under `.js-reveal` (set before first paint, removed for reduced motion), so no-JS visitors see everything.
-- Cards lift 2px on hover (pointer devices only). Buttons scale to 0.97 on press.
+- Hero illustration (`hero.css`, no real figures): the overview card enters, the ring fills and its check draws, bars grow left to right, the orange trend line draws (`duration.chart`) and its dot lands, then the task cards arrive one by one (blur + rise) and their checks draw. Plays once. On pointer devices the layers follow the pointer slightly by `--depth` (`js/hero.js`).
+- Hero glow drifts very slowly (`duration.ambient`, alternate). The only looping motion on the site.
+- Nav: an active-section pill slides between links as you scroll (`js/nav.js`, smooth spring) and fades out over sections without a link.
+- Steps: the connectors draw left to right as the steps scroll into view (CSS scroll-driven animation; finished line where unsupported).
+- Cards lift 2px on hover, the icon badge tilts slightly and the icon redraws its strokes once (pointer devices only). Buttons scale to 0.97 on press; a trailing arrow nudges forward on hover.
+- Page transitions: cross-document view transitions between pages; the header stays put, the content fades.
 - Header float (after crafted.so): the shape contracts first (`duration.morph`, `easing.inOut`), then the glass, border and shadow fade in (`duration.base`, delayed `duration.quick`). Returning to rest morphs everything together. The pill hugs its content (width measured in `js/header.js`).
-- `prefers-reduced-motion`: animations and transitions become near-instant (no delays), smooth scroll is off, scroll reveals are skipped.
+- `prefers-reduced-motion`: animations and transitions become near-instant (no delays), smooth scroll is off, scroll reveals, hero draw-in, tilt, glow drift, steps drawing and page transitions are skipped (final states shown).
 
 ## 6. Components
 All live in `styles/components/` (one file per component, class names map 1:1 to future React components).
@@ -122,7 +127,7 @@ All live in `styles/components/` (one file per component, class names map 1:1 to
 | Card | `card.css` | `--interactive` adds hover lift; `.card-grid` 1/2/3 columns |
 | Badge / Provider | `badge.css` | Verified-fact pill (Finanstilsynet link), "Leveres av …" line |
 | Form / Field | `form.css` | Ready for the contact form; **not imported** until the form returns |
-| SiteHeader | `header.css` + `js/header.js` | Rest: full-width, transparent, `size.headerInset` from the top. Scrolled (`[data-scrolled]`): floating glass pill, `size.floatingHeader.*`. Constant outer height, so no layout shift. Works without JS (stays at rest). Mobile menu via `<details>`. |
+| SiteHeader | `header.css` + `js/header.js` + `js/nav.js` | Rest: full-width, transparent, `size.headerInset` (24px) from the top. Scrolled (`[data-scrolled]`): floating glass pill, `size.floatingHeader.offset` (24px; `offsetCompact` 16px below 900px) from the top. The header is `display: flow-root` so the bar's margin stays inside the sticky box (otherwise it collapses and the pill sits flush at 0px). Constant outer height, so no layout shift. Active-section pill via `js/nav.js`. Works without JS (stays at rest). Mobile menu via `<details>`. |
 | SiteFooter | `footer.css` | Org.nr., contact, links |
 
 Sections (`styles/sections/`): hero, steps, about, contact, prose.
@@ -135,5 +140,6 @@ Sections (`styles/sections/`): hero, steps, about, contact, prose.
 - **Do** say "godkjent regnskapsselskap" **only about NK Regnskap AS** (Finanstilsynet, verified October 2026). NK Økonomi Bistand AS has no licence: never imply it does accounting, auditing or investment advice.
 - **Don't** list auditing (revisjon) or investment advice until the customer has confirmed scope and licences.
 - **Do** show both companies with org.nr. in the footer. Only NK Økonomi Bistand AS is VAT-registered (MVA); NK Regnskap AS is not (checked October 2026).
-- **Don't** use primitives directly, except the decorative hero glow (`teal.3`, `apricot.3`).
+- **Don't** use primitives directly, except in the decorative hero (glow `teal.3`, `apricot.2–3`; highlighted chart bar `apricot.6`).
+- **Don't** put real-looking figures in the hero illustration. It shows tasks and a shape of growth, never amounts.
 - **Don't** put the logo on dark backgrounds.
