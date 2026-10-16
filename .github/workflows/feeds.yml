@@ -1,10 +1,10 @@
-# Fetches Skatteetaten's RSS feeds daily and commits the JSON the site reads (data/*.json).
+# Fetches Skatteetaten's RSS feeds weekly and commits the JSON the site reads (data/*.json).
 # The feeds block cross-origin browser requests, so they can't be fetched from the page itself.
 name: Oppdater frister og nyheter
 
 on:
   schedule:
-    - cron: "15 4 * * *" # daily, early morning Norwegian time
+    - cron: "0 6 * * 1" # weekly, Mondays at 06:00 UTC
   workflow_dispatch:
 
 permissions:

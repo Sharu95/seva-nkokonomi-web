@@ -13,7 +13,7 @@ Pages render straight from disk (`file://`) too, since icons are inlined in each
 index.html            One-page site: hero, #regnskap, #radgivning, #frister (Kommende frister), process, about, contact
 aktuelt.html          All upcoming tax deadlines and a-ordningen news (rendered from data/*.json)
 personvern.html       Privacy policy (draft, review before publishing)
-data/                 frister.json, a-ordningen.json: Skatteetaten feeds as JSON (updated daily by CI)
+data/                 frister.json, a-ordningen.json: Skatteetaten feeds as JSON (updated weekly by CI)
 robots.txt, sitemap.xml
 tokens.json           Design tokens (DTCG): source of truth
 DESIGN.md             Design intent: brand, rules, components
@@ -42,7 +42,7 @@ scripts/
 ```
 
 ## Tax deadlines and news (feeds)
-Skatteetaten's RSS feeds (skattekalender for bedrift and person, a-ordningen news) can't be fetched from the browser: they only allow Skatteetaten's own origin (CORS). Instead, `.github/workflows/feeds.yml` runs `scripts/fetch_feeds.py` daily, and commits `data/*.json` when something changed. It then requests a Pages rebuild. Run `npm run feeds` to refresh the data locally. A failing feed keeps its previous file and fails the workflow, so you get notified.
+Skatteetaten's RSS feeds (skattekalender for bedrift and person, a-ordningen news) can't be fetched from the browser: they only allow Skatteetaten's own origin (CORS). Instead, `.github/workflows/feeds.yml` runs `scripts/fetch_feeds.py` weekly (Mondays at 06:00 UTC), and commits `data/*.json` when something changed. It then requests a Pages rebuild. Run `npm run feeds` to refresh the data locally. A failing feed keeps its previous file and fails the workflow, so you get notified.
 
 ## Icons
 Icons come from `assets/icons.svg` (source). In pages, write `<svg class="icon" aria-hidden="true"><use href="#id" /></svg>`, then run `npm run icons`: it inlines exactly the symbols each page uses.
