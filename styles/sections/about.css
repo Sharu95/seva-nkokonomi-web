@@ -78,3 +78,22 @@
     gap: var(--ds-space-12);
   }
 }
+
+/* Industry labels: quiet pills, not links. */
+.about__industries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.about__industries li {
+  padding: var(--ds-space-2) var(--ds-space-4);
+  border: 1px solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-color-surface-raised);
+  color: var(--ds-color-text-primary);
+  font-size: var(--ds-font-small-size);
+  line-height: var(--ds-font-small-line-height);
+}
