@@ -1,7 +1,14 @@
 {
-  "updated": "2026-10-10T20:03:50+00:00",
+  "updated": "2026-10-19T12:20:30+00:00",
   "source": "Skatteetaten",
   "items": [
+    {
+      "title": "A-ordningen - informasjonsmøte, 22. oktober",
+      "summary": "Vi inviterer til nytt informasjonsmøte torsdag 22. oktober kl. 09:00 – 10:00",
+      "date": "2026-10-19T09:17:28+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/a-ordningen---informasjonsmote-22.-oktober/",
+      "source": "systemleverandor"
+    },
     {
       "title": "Husk å rapportere siste dato for endring av stillingsprosent",
       "summary": "Vi ser at enkelte opplysningspliktige ikke rapporterer siste dato for endring av stillingsprosent. Opplysningen er obligatorisk og skal rapporteres både for ordinære og maritime arbeidsforhold.",
@@ -134,13 +141,6 @@
       "date": "2026-05-22T11:40:56+00:00",
       "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/rapportering-av-arbeidsforhold-i-a-meldingen-ved-streik-og-liknende-fravar/",
       "source": "arbeidsgiver"
-    },
-    {
-      "title": "Alternativ løsning for å hente skattekort til arbeidsgiver - vedleggsløsning",
-      "summary": "For å sikre en smidig overgang til nye Altinn, har Skatteetaten besluttet å tilby en alternativ løsning for å hente skattekort til arbeidsgiver.",
-      "date": "2026-05-22T07:59:45+00:00",
-      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/alternativ-losning-for-a-hente-skattekort-til-arbeidsgiver/",
-      "source": "systemleverandor"
     }
   ]
 }
