@@ -1,7 +1,21 @@
 {
-  "updated": "2026-10-19T12:20:30+00:00",
+  "updated": "2026-10-26T12:22:49+00:00",
   "source": "Skatteetaten",
   "items": [
+    {
+      "title": "Spørsmål og svar - Informasjonsmøtet 22.10",
+      "summary": "Vedlagt finner dere spørsmål og svar fra informasjonsmøtet 22. oktober.",
+      "date": "2026-10-22T12:04:46+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/sporsmal-og-svar---informasjonsmotet-22.10/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Presentasjoner til informasjonsmøtet 22. oktober",
+      "summary": "Her finner dere presentasjonen til informasjonsmøtet om a-ordningen som avholdes 22. oktober",
+      "date": "2026-10-21T12:56:22+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/presentasjoner-til-informasjonsmotet-22.-oktober/",
+      "source": "systemleverandor"
+    },
     {
       "title": "A-ordningen - informasjonsmøte, 22. oktober",
       "summary": "Vi inviterer til nytt informasjonsmøte torsdag 22. oktober kl. 09:00 – 10:00",
@@ -126,20 +140,6 @@
       "summary": "Nytt grunnbeløp (G) gjelder fra 1. mai 2026. Arbeidsgivere bør nå gjennomgå hvordan endringen påvirker rapporteringen i a-meldingen for mai med innleveringsfrist 5. juni.",
       "date": "2026-05-27T10:57:15+00:00",
       "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/oppdatert-grunnbelop-i-folketrygden-fra-1.-mai-2026/",
-      "source": "arbeidsgiver"
-    },
-    {
-      "title": "Endring i forsendelsen (transmission-en) i Dialogporten",
-      "summary": "I testmiljøet har nå forsendelsen (transmission-en) i Dialogporten to URL-er.",
-      "date": "2026-05-22T13:30:14+00:00",
-      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/endring-i-forsendelsen-transmission-en-i-dialogporten/",
-      "source": "systemleverandor"
-    },
-    {
-      "title": "Rapportering av arbeidsforhold i a-meldingen ved streik og liknende fravær",
-      "summary": "Feil rapportering i a-meldingen kan få direkte konsekvenser for ansattes rettigheter hos Nav. En vanlig misforståelse er at arbeidsgiver avslutter arbeidsforhold ved streik og permittering, selv om arbeidsforholdet fortsatt består.",
-      "date": "2026-05-22T11:40:56+00:00",
-      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/rapportering-av-arbeidsforhold-i-a-meldingen-ved-streik-og-liknende-fravar/",
       "source": "arbeidsgiver"
     }
   ]
