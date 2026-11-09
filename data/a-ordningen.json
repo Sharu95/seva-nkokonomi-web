@@ -1,7 +1,14 @@
 {
-  "updated": "2026-10-26T12:22:49+00:00",
+  "updated": "2026-11-09T15:24:34+00:00",
   "source": "Skatteetaten",
   "items": [
+    {
+      "title": "Endring i tilgang til brev om utleggstrekk fra 1. desember",
+      "summary": "Fra 1. desember er det bare tilgangspakkene «Lønn» og «Regnskapsfører lønn» i Altinn som gir delegerbar tilgang til brev om utleggstrekk til virksomheten.",
+      "date": "2026-11-06T09:27:46+00:00",
+      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/endring-i-tilgang-til-brev-om-utleggstrekk-fra-1.-desember/",
+      "source": "arbeidsgiver"
+    },
     {
       "title": "Spørsmål og svar - Informasjonsmøtet 22.10",
       "summary": "Vedlagt finner dere spørsmål og svar fra informasjonsmøtet 22. oktober.",
@@ -134,13 +141,6 @@
       "date": "2026-05-28T10:21:06+00:00",
       "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/avstemmingsrapport-api-er-na-tilgjengelig-i-testmiljoet/",
       "source": "systemleverandor"
-    },
-    {
-      "title": "Oppdatert grunnbeløp i folketrygden fra 1. mai 2026",
-      "summary": "Nytt grunnbeløp (G) gjelder fra 1. mai 2026. Arbeidsgivere bør nå gjennomgå hvordan endringen påvirker rapporteringen i a-meldingen for mai med innleveringsfrist 5. juni.",
-      "date": "2026-05-27T10:57:15+00:00",
-      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/siste-fra-a-ordningen/oppdatert-grunnbelop-i-folketrygden-fra-1.-mai-2026/",
-      "source": "arbeidsgiver"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T14:55:18+00:00",
+  "updated": "2026-11-09T15:24:33+00:00",
   "source": "Skatteetaten",
   "items": [
     {
@@ -57,9 +57,33 @@
       "audience": "bedrift"
     },
     {
+      "title": "Skattekort for 2027 sendes ut",
+      "date": "2026-12-15",
+      "url": "https://www.skatteetaten.no/person/skatt/skattekort/bestille-endre/",
+      "audience": "person"
+    },
+    {
       "title": "A-melding for desember – frist for levering",
       "date": "2027-01-05",
       "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/arbeidsgiver/a-meldingen/",
+      "audience": "bedrift"
+    },
+    {
+      "title": "Aksjesparekonto - frist for levering av tredjepartsopplysninger",
+      "date": "2027-02-10",
+      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/rapportering-og-bransjer/tredjepartsopplysninger/bank-finans-og-forsikring/aksjesparekonto/",
+      "audience": "bedrift"
+    },
+    {
+      "title": "Finansprodukter - frist for levering av tredjepartsopplysninger",
+      "date": "2027-02-10",
+      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/rapportering-og-bransjer/tredjepartsopplysninger/bank-finans-og-forsikring/finansprodukter/",
+      "audience": "bedrift"
+    },
+    {
+      "title": "Aksjesparekonto - frist for å korrigere feil i innsendte tredjepartsopplysninger",
+      "date": "2027-03-01",
+      "url": "https://www.skatteetaten.no/bedrift-og-organisasjon/rapportering-og-bransjer/tredjepartsopplysninger/bank-finans-og-forsikring/aksjesparekonto/",
       "audience": "bedrift"
     }
   ]
