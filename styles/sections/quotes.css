@@ -1,0 +1,6 @@
+/* Customer quotes: a short band directly under the hero. */
+
+.quotes-section {
+  display: grid;
+  gap: var(--ds-space-stack-md);
+}

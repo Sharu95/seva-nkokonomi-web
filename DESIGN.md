@@ -35,7 +35,7 @@ The logo tells the same story: the ring (teal) is order and control, the bars an
 | Contrast | Middle | Teal on key actions and the accounting area. Apricot as soft surfaces for the advisory area. Orange is a small spark (step numbers), never a surface. |
 
 ## 2. Principles
-1. **Trust before flair.** Clear text, honest claims, visible company info (org.nr.). No fake numbers or testimonials.
+1. **Trust before flair.** Clear text, honest claims, visible company info (org.nr.). No fake numbers. Testimonials only from real customers, word for word and with consent.
 2. **One action per view.** "Kontakt oss" (teal, primary) is the only strong call to action. Phone is the secondary action.
 3. **Plain language.** Short sentences, no jargon. Norwegian Bokmål first.
 4. **Calm motion.** Content arrives softly once and responds to the user. The only loop is the slow hero glow drift (`duration.ambient`), off for reduced motion. Nothing blinks or demands attention.

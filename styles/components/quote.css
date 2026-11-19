@@ -1,0 +1,70 @@
+/* Quote: a customer testimonial. Quiet raised surface; the quote mark carries the area color. */
+
+.quotes {
+  display: grid;
+  gap: var(--ds-space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.quotes > li {
+  display: grid;
+}
+
+.quote {
+  --quote-mark: var(--ds-color-accent-default);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: var(--ds-space-stack-sm);
+  margin: 0;
+  padding: var(--ds-space-inset-sm);
+  border-radius: var(--ds-radius-lg);
+  background: var(--ds-color-surface-raised);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.quote--warm {
+  --quote-mark: var(--ds-color-secondary-default);
+}
+
+.quote blockquote {
+  margin: 0;
+}
+
+.quote blockquote::before {
+  content: "\201C";
+  display: block;
+  height: 0.42em;
+  margin-bottom: var(--ds-space-2);
+  font-family: var(--ds-font-family-display);
+  font-size: var(--ds-font-heading-lg-size);
+  font-weight: 800;
+  line-height: 0.8;
+  color: var(--quote-mark);
+}
+
+.quote blockquote p {
+  font-size: var(--ds-font-small-size);
+  line-height: var(--ds-font-small-line-height);
+  color: var(--ds-color-text-primary);
+  text-wrap: pretty;
+}
+
+.quote figcaption {
+  display: grid;
+  gap: var(--ds-space-1);
+  padding-top: var(--ds-space-stack-xs);
+  border-top: 1px solid var(--ds-color-border-subtle);
+  font-size: var(--ds-font-caption-size);
+  line-height: var(--ds-font-caption-line-height);
+}
+
+.quote figcaption span {
+  color: var(--ds-color-text-secondary);
+}
+
+@media (min-width: 960px) {
+  .quotes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

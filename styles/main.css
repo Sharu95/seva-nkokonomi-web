@@ -10,11 +10,13 @@
 @import url("components/badge.css");
 @import url("components/pill.css");
 @import url("components/deadline.css");
+@import url("components/quote.css");
 @import url("components/header.css");
 @import url("components/footer.css");
 @import url("components/reveal.css");
 
 @import url("sections/hero.css");
+@import url("sections/quotes.css");
 @import url("sections/frister.css");
 @import url("sections/aktuelt.css");
 @import url("sections/steps.css");
