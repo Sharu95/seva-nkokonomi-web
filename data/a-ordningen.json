@@ -1,7 +1,35 @@
 {
-  "updated": "2026-11-09T15:24:34+00:00",
+  "updated": "2026-11-23T17:32:07+00:00",
   "source": "Skatteetaten",
   "items": [
+    {
+      "title": "Satsforskriften 2027",
+      "summary": "",
+      "date": "2026-11-20T08:19:39+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/satsforskriften-2027/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Registrer åpning når dere viser forsendelser fra Dialogporten",
+      "summary": "Bruker dere Dialogporten til å hente og vise forsendelser fra Skatteetaten i systemet deres, eller planlegger dere å gjøre det?",
+      "date": "2026-11-19T07:57:54+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/registrer-apning-nar-dere-viser-forsendelser-fra-dialogporten/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Releasedokument for R2 2026 er nå publisert",
+      "summary": "",
+      "date": "2026-11-18T12:36:32+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/releasedokument-for-r2-2026-er-na-publisert/",
+      "source": "systemleverandor"
+    },
+    {
+      "title": "Lønn må rapporteres innen fristen",
+      "summary": "Det er viktig å rapportere alle opplysninger om jobber og lønn innen fristen hver måned. Opplysningene benyttes både av SSB og NAV.",
+      "date": "2026-11-17T12:01:07+00:00",
+      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/lonn-ma-rapporteres-innen-fristen/",
+      "source": "systemleverandor"
+    },
     {
       "title": "Endring i tilgang til brev om utleggstrekk fra 1. desember",
       "summary": "Fra 1. desember er det bare tilgangspakkene «Lønn» og «Regnskapsfører lønn» i Altinn som gir delegerbar tilgang til brev om utleggstrekk til virksomheten.",
@@ -112,34 +140,6 @@
       "summary": "Vi har oppdaget en feil med JSON for tilbakemelding.",
       "date": "2026-06-05T06:13:55+00:00",
       "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/feil-med-json-for-tilbakemelding---a-meldingen/",
-      "source": "systemleverandor"
-    },
-    {
-      "title": "Viktig: Sikre støtte for manuell innsending av a‑melding via XML i overgangsperioden",
-      "summary": "Tjenesten for innsending av a-melding som filvedlegg er nå tilgjengelig i produksjon. Med løsningen kan virksomheter laste opp én XML-fil per innsending, forutsatt at filen følger gjeldende spesifikasjoner.",
-      "date": "2026-06-04T11:23:34+00:00",
-      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/viktig-sikre-stotte-for-manuell-innsending-av-amelding-via-xml-i-overgangsperioden/",
-      "source": "systemleverandor"
-    },
-    {
-      "title": "Avstemmingsrapport-API er nå tilgjengelig i produksjon",
-      "summary": "",
-      "date": "2026-06-03T13:05:26+00:00",
-      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/avstemmingsrapport-api-er-na-tilgjengelig-i-produksjon/",
-      "source": "systemleverandor"
-    },
-    {
-      "title": "Endring i forsendelsen (transmission-en) i Dialogporten i produksjon",
-      "summary": "Vi endret i forrige uke til at forsendelsen (transmission-en) i Dialogporten fikk to URL-er i testmiljøet.",
-      "date": "2026-05-29T13:05:55+00:00",
-      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/endring-i-forsendelsen-transmission-en-i-dialogporten-i-produksjon/",
-      "source": "systemleverandor"
-    },
-    {
-      "title": "Avstemmingsrapport-API er nå tilgjengelig i testmiljøet",
-      "summary": "",
-      "date": "2026-05-28T10:21:06+00:00",
-      "url": "https://www.skatteetaten.no/samarbeidspartnere/sluttbrukersystemer/sbs-nyheter/avstemmingsrapport-api-er-na-tilgjengelig-i-testmiljoet/",
       "source": "systemleverandor"
     }
   ]
